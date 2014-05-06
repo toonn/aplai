@@ -1,0 +1,10 @@
+elke vertex heeft 0 of 2 verbindingen
+vertex met al 2 verbindingen => rest is onmogelijk
+vertex met 1 nog "mogelijke" verbinding => deze is onmogelijk
+3 met 1 verbinding naar vertex => opening ligt daar langs
+als boog verwijderen betekent dat gebied afgezonderd geraakt moet deze zeker zijn
+vertex met inkomende zekere boog en maar 1 mogelijke uitgaande boog => die boog is zeker
+alles dat de lus sluit terwijl er nog stukken zijn is onmogelijk
+alles dat van een zekere een dead end maakt is onmogelijk
+patronen: 2 max-1 naast elkaar => boog ertussen is zeker
+          max-1 in een hoek => hoek vertex heeft 2 zekere bogen
