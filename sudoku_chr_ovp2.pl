@@ -1,4 +1,4 @@
-:- module(sudoku_chr, [solve/1, solveall/0]).
+:- module(sudoku_chr_ovp2, [solve/1, solveall/0]).
 :- use_module(library(chr)).
 :- chr_option(debug, off). % on - off
 :- chr_option(optimize, full). % full - off
