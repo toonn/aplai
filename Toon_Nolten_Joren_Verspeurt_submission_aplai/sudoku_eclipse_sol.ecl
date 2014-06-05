@@ -47,7 +47,7 @@ experiment.
 solve(Name) :-
     puzzles(P, Name),
     write(Name),nl,
-    time(solution(P)),
+    time(solution(P,[0,0,1,2,3],most_constrained,indomain,[])),
     nl.
 
 solution(Problem,Constraints,Selection,Choice,Method) :- 
