@@ -82,7 +82,7 @@ solve(Puzzle_name) :-
     cleanup.
 solveall :-
     puzzles(_, Puzzle_name),
-    once(solve(Puzzle_name)),
+    time(once(solve(Puzzle_name))),
     nl,
     fail.
 solveall.
@@ -147,7 +147,7 @@ combination(N, [_ | Ps], Combination) :-
     combination(N, Ps, Combination).
 
 non_essential_pos(R-C, Pos) :-
-    combination(3, [R1-C1, R2-C2, R3-C3], Pos),
+    combination(3, Pos, [R1-C1, R2-C2, R3-C3]),
     (R == R1 ; R == R2 ; R == R3),
     (C == C1 ; C == C2 ; C == C3),
     (box(R-C, R1-C1) ; box(R-C, R2-C2) ; box(R-C, R3-C3)),
@@ -156,11 +156,27 @@ remove_non_essential_pos(Pos, NPos) :-
     select(RemP, Pos, NPos),
     non_essential_pos(RemP, NPos).
 
+essential_pos_(_,[],[]).
+essential_pos_(Seen, [ER-EC | UnSeen], [ER-EC | EPos]) :-
+    (\+ ((member(R-_, Seen) ; member(R-_, UnSeen)), ER == R)
+        ;
+        \+ ((member(_-C, Seen) ; member(_-C, UnSeen)), EC == C)
+        ;
+        \+ ((member(P, Seen) ; member(P, UnSeen)), box(ER-EC, P))),
+    !,
+    essential_pos_([ER-EC | Seen], UnSeen, EPos).
+essential_pos_(Seen, [NEP | UnSeen], EPos) :-
+    essential_pos_([NEP | Seen], UnSeen, EPos).
+essential_pos(Pos, EPos) :-
+    essential_pos_([], Pos, EPos).
+
 % Alternative viewpoint
 
-fail_when_too_few_positions @ val_set(_, Pos)
-    <=> length(Pos, Len), Len < 9
+fail_when_two_sets_require_same_position @ val_set(V1, Pos1), val_set(V2, Pos2)
+    <=> V1 \= V2, essential_pos(Pos1, EPos1), essential_pos(Pos2, EPos2),
+        intersection(EPos1, EPos2, Intersection), \+ length(Intersection, 0)
         | fail.
+
 
 remove_single_from_other @ propagate, single(Vsingle, Psingle)
     \ val_set(V, Pos)
@@ -172,18 +188,18 @@ fill_single @ propagate \ single(V, Psingle), val_set(V, Pos) # passive
 
 
 propagate <=> search(10).
-search(X), search(Y) <=> Z is max(X,Y) | search(Z).
 
-first_fail @ search(N) \ val_set(V, Pos)
-    <=> length(Pos, N)
+first_fail @ search(N), val_set(V, Pos)
+    <=> length(Pos, N), NN is max(N - 1, 10)
         | remove_non_essential_pos(Pos, NPos),
-        val_set(V, NPos).
+        val_set(V, NPos), search(NN).
 
+search(82), val_set(_,Ps) <=> length(Ps, L), L > 9 | fail.
 search(82) <=> true.
 search(N) <=> NN is N + 1 | search(NN).
 
 
-/*
+
 set_to_cell_representation @ convert \ val_set(V, Pos)
     <=> mkcells(V, Pos).
 remove_uncertain_cells @ convert \ cell(P, [V]), cell(P, [H | Vs])
@@ -191,4 +207,4 @@ remove_uncertain_cells @ convert \ cell(P, [V]), cell(P, [H | Vs])
 convert <=> true.
 cleanup \ cell(_, _) <=> true.
 cleanup <=> true.
-*/
+
