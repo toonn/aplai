@@ -1,8 +1,8 @@
 :- module(sudoku_chr_ovp, [solve/1, solveall/0]).
 :- use_module(library(chr)).
-:- chr_option(debug, on). % on - off
-:- chr_option(optimize, off). % full - off
-:- chr_option(check_guard_bindings, on). % on - off
+:- chr_option(debug, off). % on - off
+:- chr_option(optimize, full). % full - off
+:- chr_option(check_guard_bindings, off). % on - off
 
 :- chr_type list(T) ---> [] ; [T | list(T)].
 :- chr_type row == natural.
@@ -11,6 +11,8 @@
 :- chr_type val ---> [natural | list(natural)].
 
 :- chr_constraint single(+natural, +pos).
+:- chr_constraint filled(+list(pos)).
+:- chr_constraint remove(+pos, +list(natural)).
 :- chr_constraint val_set(+natural, +list(pos)).
 :- chr_constraint cell(+pos, +val).
 :- chr_constraint search(+natural). 
@@ -76,10 +78,10 @@ solve(Puzzle_name) :-
     show(P), nl,
     initial_store(P),
     !,
-    propagate,
+    propagate/*,
     convert,
     show_solution,
-    cleanup.
+    cleanup*/.
 solveall :-
     puzzles(_, Puzzle_name),
     time(once(solve(Puzzle_name))),
@@ -89,7 +91,8 @@ solveall.
 
 initial_store(Puzzle) :-
     initial_sets(9),
-    initial_store_(Puzzle, 1, _).
+    initial_store_(Puzzle, 1, _),
+    filled([]).
 initial_sets(0) :- !.
 initial_sets(Set) :-
     all_pos(All),
@@ -170,6 +173,18 @@ essential_pos_(Seen, [NEP | UnSeen], EPos) :-
 essential_pos(Pos, EPos) :-
     essential_pos_([], Pos, EPos).
 
+fill_essential_(_, [], _).
+fill_essential_(V, [EP | EPos], Fs) :-
+    member(EP, Fs),
+    fill_essential_(V, EPos, Fs).
+fill_essential_(V, [EP | EPos], Fs) :-
+    single(V, EP),
+    fill_essential_(V, EPos, Fs).
+fill_essential(V, EPos, Fs) :-
+    fill_essential_(V, EPos, Fs),
+    propagate.
+
+
 % Alternative viewpoint
 
 fail_when_two_sets_require_same_position @ val_set(V1, Pos1), val_set(V2, Pos2)
@@ -178,25 +193,28 @@ fail_when_two_sets_require_same_position @ val_set(V1, Pos1), val_set(V2, Pos2)
         | fail.
 
 
-remove_single_from_other @ propagate, single(Vsingle, Psingle)
-    \ val_set(V, Pos)
-    <=> V \= Vsingle, member(Psingle, Pos), delete(Pos, Psingle, NPos)
-        | val_set(V, NPos).
-fill_single @ propagate \ single(V, Psingle), val_set(V, Pos) # passive
-    <=> exclude(influence(Psingle), Pos, NPos)
-        | val_set(V, [Psingle | NPos]).
+remove(_, []) <=> true.
+remove_single_from_other @ remove(Psingle, [V | Vs]),
+    val_set(V, Pos)
+    <=> (select(Psingle, Pos, NPos) ; Pos = NPos)
+        | val_set(V, NPos), remove(Psingle, Vs).
+fill_single @ propagate \ single(V, Psingle),
+    filled(Fs), val_set(V, Pos)
+    <=> exclude(influence(Psingle), Pos, NPos),
+        select(V, [1,2,3,4,5,6,7,8,9], Vs)
+        | filled([Psingle | Fs]), remove(Psingle, Vs),
+            val_set(V, [Psingle | NPos]).
 
 
-propagate <=> search(10).
 
-first_fail @ search(N), val_set(V, Pos)
-    <=> length(Pos, N), NN is max(N - 1, 10)
-        | remove_non_essential_pos(Pos, NPos),
-        val_set(V, NPos), search(NN).
+propagate <=> search(8).
 
-search(82), val_set(_,Ps) <=> length(Ps, L), L > 9 | fail.
-search(82) <=> true.
-search(N) <=> NN is N + 1 | search(NN).
+first_fail @ val_set(V, Pos) # passive, filled(Fs) # passive \ search(N)
+    <=> essential_pos(Pos, EPos), length(EPos, N)
+        | fill_essential(V, EPos, Fs).
+
+search(0) <=> true.
+search(N) <=> NN is N - 1, search(NN).
 
 
 
