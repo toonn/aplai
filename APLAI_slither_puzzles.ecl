@@ -1,3 +1,9 @@
+% Trivial puzzles
+puzzle(z1,1,1,[cell(1,1,0)]).
+puzzle(a1,1,1,[cell(1,1,4)]).
+puzzle(ar2,1,2,[cell(1,1,3),cell(1,2,3)]).
+puzzle(a2,2,2,[cell(1,1,2),cell(1,2,2),cell(2,1,2),cell(2,2,2)]).
+puzzle(b2,2,2,[cell(1,1,2),cell(1,2,2),cell(2,1,2)]).
 
 % Example puzzles
 puzzle(a5,5,5,[cell(1,2,1), cell(2,1,3), cell(2,5,2), cell(3,1,3), cell(3,2,0), cell(3,3,2), cell(3,5,1), cell(4,1,3), cell(4,2,2), cell(4,3,2), cell(5,3,2)]).
