@@ -1,4 +1,5 @@
 :- lib(ic).
+:- import sumlist/2 from ic_global.
 :- import time/1 from util.
 :- import nth0/3 from listut.
 
@@ -80,11 +81,26 @@ slither(NRows,NCols,LONC,ListOfEdges) :-
 
     % Constrain
     ( foreach(cell(X,Y,V),LONC), param(HorE,VertE) do
-        write(cell(X,Y,V)),nl,
         XP is X+1, YP is Y+1,
         HorE[X,Y] + HorE[XP,Y] + VertE[X,Y] + VertE[X,YP] #= V
     ),
     write(cons),nl,
+
+    % Cycle viewpoint
+    %NumDots is NRowsP*NColsP,
+    %RBVal is (2^NumDots)-1,
+    %TopDot is 2^(NumDots-1),
+    %Cycle :: 15..RBVal,
+    %dim(PowerGrid,[NumDots]),
+    %PowerGrid[1..NumDots] :: 0..TopDot,
+    %( multifor([I,J],[1,1],[NRowsP,NColsP]), param(NColsP,Dots,PowerGrid) do
+    %    IJ is (I-1)*NColsP+J,
+    %    #\=(0,Dots[I,J],A),
+    %    Val is (2^(IJ-1)),
+    %    PowerGrid[IJ] #= Val*A
+    %),
+    %DotList is PowerGrid[1..NumDots],
+    %sumlist(DotList,Cycle), 
 
     % Put together return
     ( multifor([I,J],[1,1],[NRowsP,NCols]), foreach(B,ListOfEdges1), 
@@ -96,10 +112,83 @@ slither(NRows,NCols,LONC,ListOfEdges) :-
         B is VertE[I,J]
     ),
     append(ListOfEdges1,ListOfEdges2,ListOfEdges),
-    write_term(Dots,[depth(full)]),nl,
     % Search
     term_variables(Dots, Vars),
-    search(Vars,0,first_fail,indomain,complete,[]).
+    search(Vars,0,first_fail,indomain,complete,[]),
+    singleCycle(Dots,HorE,VertE).
+
+% Check if the grid contains 1 complete cycle by going over all non-zero dots
+singleCycle(Dots,HorE,VertE) :-
+    filterNonZero(Dots,1,1,[],[Start|NonZero]),
+    %length([Start|NonZero],L),
+    %write(L),
+    sc(NonZero,[Start],HorE,VertE).
+    %,nl.
+
+filterNonZero(Dots,I,J,T,R) :-
+    dim(Dots,[I,J]),
+    H is Dots[I,J],
+    (
+        ( H=\=0, R=[[I,J]|T] )
+    ;
+        ( H==0, R=T )
+    ),
+    !.
+    %,nl. % Convenience to prevent index out of bounds in next case
+filterNonZero(Dots,I,J,T,R) :-
+    dim(Dots,[_,M]),
+    rectNext(I,J,M,IN,JN),
+    H is Dots[I,J],
+    (
+        ( H==0, filterNonZero(Dots,IN,JN,T,R) )
+    ;
+        ( H=\=0, filterNonZero(Dots,IN,JN,[[I,J]|T],R) )
+    ).
+
+rectNext(I,M,M,IN,1) :-
+    !, % Convenience
+    IN is I+1.
+rectNext(I,J,_,I,JN) :-
+    JN is J+1.
+
+sc([],_,_,_) :- !. % Don't backtrack on a found single cycle.
+sc(NZ,[H|T],Hor,Vert) :-
+    member(N,NZ),
+    connected(H,N,Hor,Vert),
+    !, % Don't go into the other way round for the 1st node.
+    delete(N,NZ,NZN),
+    sc(NZN,[N,H|T],Hor,Vert).
+
+%AB
+connected([I,JA],[I,JB],H,_) :-
+    JA =:= JB-1,
+    HD is H[I,JA],
+    HD==1,
+    %write('- '),
+    !. % Performance
+%BA
+connected([I,JA],[I,JB],H,_) :-
+    JA =:= JB+1,
+    HD is H[I,JB],
+    HD==1,
+    %write(' -'),
+    !. % Performance
+%A
+%B
+connected([IA,J],[IB,J],_,V) :-
+    IA =:= IB-1,
+    VD is V[IA,J],
+    VD==1,
+    %write(','),
+    !. % Performance
+%B
+%A
+connected([IA,J],[IB,J],_,V) :-
+    IA =:= IB+1,
+    VD is V[IB,J],
+    VD==1.%,
+    %write('\'').
+    
 
 % Print helpers
 
