@@ -66,18 +66,31 @@ slither(NRows,NCols,LONC,ListOfEdges) :-
     Dots[1,NColsP] #= HorE[1,NCols] + 8*VertE[1,NColsP],
     Dots[NRowsP,1] #= 2*VertE[NRows,1] + 4*VertE[NRows,1],
     Dots[NRowsP,NColsP] #= HorE[NRowsP,NCols] + 2*VertE[NRows,NColsP],
-    %reverse
-    %( multifor([i,j],[1,1],[nrowsp,ncols]), param(hore,dots) do
-    %    JP is J+1, H is HorE[I,J], D is Dots[I,J], DP is Dots[I,JP],
-    %    #=(6,D,A1),  #=(12,D,A2), #=(5,D,A3),  #=(A1+A2+A3,H),
-    %    #=(3,DP,B1), #=(9,DP,B2), #=(5,DP,B3), #=(B1+B2+B3,H)
-    %),
-    %( multifor([I,J],[1,1],[NRows,NColsP]), param(VertE,Dots) do
-    %    IP is I+1, V is VertE[I,J], D is Dots[I,J], DP is Dots[IP,J],
-    %    #=(3,D,A1),  #=(6,D,A2),   #=(10,D,A3),  #=(A1+A2+A3,V),
-    %    #=(9,DP,B1), #=(12,DP,B2), #=(10,DP,B3), #=(B1+B2+B3,V)
-    %),
     write(link),nl,
+
+    % Cycle viewpoint
+    dim(CyMemb,[NRowsP,NColsP]),
+    MaxCycles is NRowsP*NColsP/4,
+    CyMemb[1..NRowsP,1..NColsP] :: 0..MaxCycles,
+    ( multifor([I,J],[1,1],[NRowsP,NColsP]), param(NRowsP,NColsP,Dots,CyMemb) do
+        DIJ is Dots[I,J], CyIJ is CyMemb[I,J],
+        IMU is I-1, IPU is I+1, JMU is J-1, JPU is J+1,
+        bwrp(IMU,1,NRowsP,IM), bwrp(IPU,1,NRowsP,IP),
+        bwrp(JMU,1,NColsP,JM), bwrp(JPU,1,NColsP,JP),
+        CyUp is CyMemb[IM,J], CyDown is CyMemb[IP,J], 
+        CyLeft is CyMemb[I,JM], CyRight is CyMemb[I,JP], 
+        #=(DIJ,0,A), #=(CyIJ,0,A),
+        #=(DIJ,3,Is3), #=(DIJ,5,Is5),
+        #=(DIJ,9,Is9), #=(DIJ,6,Is6),
+        #=(DIJ,10,Is10), #=(DIJ,12,Is12),
+        #=(CyLeft,CyIJ,IsLeft), #=(CyUp,CyIJ,IsUp),
+        #=(CyRight,CyIJ,IsRight), #=(CyDown,CyIJ,IsDown),
+        IsLeft #>= Is3, IsLeft #>= Is5, IsLeft #>= Is9,
+        IsUp #>= Is3, IsUp #>= Is6, IsUp #>= Is10,
+        IsRight #>= Is5, IsRight #>= Is6, IsRight #>= Is12,
+        IsDown #>= Is9, IsDown #>= Is10, IsDown #>= Is12
+    ),
+    write(cy),nl,
 
     % Constrain
     ( foreach(cell(X,Y,V),LONC), param(HorE,VertE) do
@@ -85,22 +98,6 @@ slither(NRows,NCols,LONC,ListOfEdges) :-
         HorE[X,Y] + HorE[XP,Y] + VertE[X,Y] + VertE[X,YP] #= V
     ),
     write(cons),nl,
-
-    % Cycle viewpoint
-    %NumDots is NRowsP*NColsP,
-    %RBVal is (2^NumDots)-1,
-    %TopDot is 2^(NumDots-1),
-    %Cycle :: 15..RBVal,
-    %dim(PowerGrid,[NumDots]),
-    %PowerGrid[1..NumDots] :: 0..TopDot,
-    %( multifor([I,J],[1,1],[NRowsP,NColsP]), param(NColsP,Dots,PowerGrid) do
-    %    IJ is (I-1)*NColsP+J,
-    %    #\=(0,Dots[I,J],A),
-    %    Val is (2^(IJ-1)),
-    %    PowerGrid[IJ] #= Val*A
-    %),
-    %DotList is PowerGrid[1..NumDots],
-    %sumlist(DotList,Cycle), 
 
     % Put together return
     ( multifor([I,J],[1,1],[NRowsP,NCols]), foreach(B,ListOfEdges1), 
@@ -115,7 +112,32 @@ slither(NRows,NCols,LONC,ListOfEdges) :-
     % Search
     term_variables(Dots, Vars),
     search(Vars,0,first_fail,indomain,complete,[]),
-    singleCycle(Dots,HorE,VertE).
+    write(search),nl,
+    labelCycles(CyMemb,1,1,0).
+    %singleCycle(Dots,HorE,VertE).
+
+bwrp(I,Lo,Hi,Hi) :-
+    I<Lo,!.
+bwrp(I,Lo,Hi,Lo) :-
+    I>Hi,!.
+bwrp(I,_,_,I).
+
+labelCycles(Cy,I,J,_) :-
+    dim(Cy,[I,J]),
+    !. %Convenience contra-IOOB
+labelCycles(Cy,I,J,L) :-
+    dim(Cy,[_,M]),
+    D is Cy[I,J],
+    nonvar(D),
+    rectNext(I,J,M,IN,JN),
+    labelCycles(Cy,IN,JN,L).
+labelCycles(Cy,I,J,0) :-
+    dim(Cy,[_,M]),
+    D is Cy[I,J],
+    var(D),
+    D #= 1,
+    rectNext(I,J,M,IN,JN),
+    labelCycles(Cy,IN,JN,1).
 
 % Check if the grid contains 1 complete cycle by going over all non-zero dots
 singleCycle(Dots,HorE,VertE) :-
