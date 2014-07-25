@@ -1,0 +1,1706 @@
+{
+    "titles" : {
+        "1" : "24/7 Size 10",
+        "2" : "24/7 Size 5",
+        "a1" : "a10 puzzle",
+        "b1" : "b10 puzzle",
+        "61" : "janko 61 puzzle",
+        "62" : "janko 62 puzzle",
+        "63" : "janko 63 puzzle",
+        "861" : "janko 861 puzzle",
+        "13" : "janko 103 puzzle",
+        "15" : "janko 105 puzzle"
+    },
+    "xlabels" : {
+        "1" : "Configuration",
+        "2" : "Configuration",
+        "a1" : "Configuration",
+        "b1" : "Configuration",
+        "61" : "Configuration",
+        "62" : "Configuration",
+        "63" : "Configuration",
+        "861" : "Configuration",
+        "13" : "Configuration",
+        "15" : "Configuration"
+    },
+    "ylabels" : {
+        "1" : "Time",
+        "2" : "Time",
+        "a1" : "Time",
+        "b1" : "Time",
+        "61" : "Time",
+        "62" : "Time",
+        "63" : "Time",
+        "861" : "Time",
+        "13" : "Time",
+        "15" : "Time"
+    },
+    "1" : {
+        "a1" : {
+            "v(d),sc(e),sq(x)" : 0.090,
+            "v(d),sc(c),sq(x)" : 0.360,
+            "v(s),sc(e),sq(o)" : 0.380,
+            "v(d),sc(e),sq(o)" : 0.390,
+            "v(d),sc(c),sq(o)" : 0.920,
+            "v(s),sc(c),sq(o)" : 0.930
+        },
+        "b1" : {
+            "v(d),sc(c),sq(o)" : 1.190,
+            "v(s),sc(c),sq(o)" : 1.250,
+            "v(d),sc(e),sq(x)" : 1.320,
+            "v(d),sc(c),sq(x)" : 4.330,
+            "v(d),sc(e),sq(o)" : 6.820,
+            "v(s),sc(e),sq(o)" : 7.270
+        },
+        "61" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(e),sq(o)" : 0.070,
+            "v(s),sc(e),sq(o)" : 0.070,
+            "v(s),sc(c),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.100
+        },
+        "62" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.040,
+            "v(d),sc(c),sq(o)" : 0.050,
+            "v(s),sc(c),sq(o)" : 0.050
+        },
+        "63" : {
+            "v(d),sc(e),sq(x)" : 0.140,
+            "v(d),sc(e),sq(o)" : 0.260,
+            "v(s),sc(e),sq(o)" : 0.260,
+            "v(d),sc(c),sq(o)" : 0.340,
+            "v(s),sc(c),sq(o)" : 0.350,
+            "v(d),sc(c),sq(x)" : 0.680
+        },
+        "861" : {
+            "v(d),sc(e),sq(x)" : 0.520,
+            "v(d),sc(e),sq(o)" : 2.010,
+            "v(s),sc(e),sq(o)" : 2.020,
+            "v(d),sc(c),sq(x)" : 2.580,
+            "v(d),sc(c),sq(o)" : 5.140,
+            "v(s),sc(c),sq(o)" : 5.170
+        },
+        "13" : {
+            "v(d),sc(e),sq(o)" : 0.660,
+            "v(s),sc(e),sq(o)" : 0.660,
+            "v(d),sc(c),sq(o)" : 5.020,
+            "v(s),sc(c),sq(o)" : 5.050,
+            "v(d),sc(e),sq(x)" : 6.320,
+            "v(d),sc(c),sq(x)" : 21.33
+        },
+        "15" : {
+            "v(d),sc(e),sq(x)" : 1.490,
+            "v(d),sc(c),sq(x)" : 5.540,
+            "v(s),sc(e),sq(o)" : 7.490,
+            "v(d),sc(e),sq(o)" : 7.670,
+            "v(s),sc(c),sq(o)" : 12.32,
+            "v(d),sc(c),sq(o)" : 12.56
+        }
+    },
+    "2" : {
+        "a5" : {
+            "v(d),sc(c),sq(x)" : 0.000,
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(o)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.020,
+            "v(s),sc(c),sq(o)" : 0.030,
+            "v(s),sc(e),sq(o)" : 0.030
+        },
+        "b5" : {
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(e),sq(x)" : 0.030,
+            "v(d),sc(c),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.100,
+            "v(d),sc(e),sq(o)" : 0.190,
+            "v(s),sc(e),sq(o)" : 0.200
+        },
+        "janko5b" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.020,
+            "v(s),sc(e),sq(o)" : 0.020,
+            "v(d),sc(c),sq(o)" : 0.040,
+            "v(s),sc(c),sq(o)" : 0.040
+        },
+        "janko5c" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(c),sq(o)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.020,
+            "v(s),sc(c),sq(o)" : 0.020,
+            "v(s),sc(e),sq(o)" : 0.020
+        },
+        "janko5d" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(e),sq(o)" : 0.030,
+            "v(s),sc(e),sq(o)" : 0.030,
+            "v(s),sc(c),sq(o)" : 0.040,
+            "v(d),sc(c),sq(o)" : 0.050
+        },
+        "janko5e" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.030,
+            "v(s),sc(e),sq(o)" : 0.030,
+            "v(d),sc(c),sq(o)" : 0.040,
+            "v(s),sc(c),sq(o)" : 0.050
+        }
+    },
+    "a1" : {
+        "se(ff,id)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(e),sq(o)" : 0.110,
+            "v(s),sc(e),sq(o)" : 0.120,
+            "v(d),sc(c),sq(o)" : 0.130,
+            "v(s),sc(c),sq(o)" : 0.130
+        },
+        "se(ff,max)" : {
+            "v(d),sc(e),sq(x)" : 0.060,
+            "v(d),sc(c),sq(x)" : 0.110,
+            "v(s),sc(e),sq(o)" : 0.360,
+            "v(d),sc(e),sq(o)" : 0.370,
+            "v(d),sc(c),sq(o)" : 0.390,
+            "v(s),sc(c),sq(o)" : 0.400
+        },
+        "se(ff,min)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(e),sq(o)" : 0.110,
+            "v(s),sc(e),sq(o)" : 0.120,
+            "v(d),sc(c),sq(o)" : 0.130,
+            "v(s),sc(c),sq(o)" : 0.130
+        },
+        "se(ff,ran)" : {
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(e),sq(x)" : 0.030,
+            "v(s),sc(e),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.310,
+            "v(s),sc(c),sq(o)" : 0.330,
+            "v(d),sc(e),sq(o)" : 0.370
+        },
+        "se(io,id)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(s),sc(e),sq(o)" : 0.110,
+            "v(d),sc(c),sq(o)" : 0.120,
+            "v(d),sc(e),sq(o)" : 0.120,
+            "v(s),sc(c),sq(o)" : 0.180
+        },
+        "se(io,max)" : {
+            "v(d),sc(e),sq(x)" : 0.060,
+            "v(d),sc(c),sq(x)" : 0.100,
+            "v(d),sc(e),sq(o)" : 0.360,
+            "v(s),sc(e),sq(o)" : 0.360,
+            "v(d),sc(c),sq(o)" : 0.380,
+            "v(s),sc(c),sq(o)" : 0.400
+        },
+        "se(io,min)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(s),sc(e),sq(o)" : 0.110,
+            "v(d),sc(e),sq(o)" : 0.120,
+            "v(d),sc(c),sq(o)" : 0.130,
+            "v(s),sc(c),sq(o)" : 0.130
+        },
+        "se(io,ran)" : {
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(e),sq(x)" : 0.050,
+            "v(d),sc(e),sq(o)" : 0.100,
+            "v(s),sc(c),sq(o)" : 0.300,
+            "v(d),sc(c),sq(o)" : 0.310,
+            "v(s),sc(e),sq(o)" : 0.320
+        },
+        "se(l,id)" : {
+            "v(d),sc(e),sq(x)" : 0.060,
+            "v(d),sc(c),sq(x)" : 0.090,
+            "v(s),sc(e),sq(o)" : 0.160,
+            "v(d),sc(e),sq(o)" : 0.170,
+            "v(s),sc(c),sq(o)" : 0.170,
+            "v(d),sc(c),sq(o)" : 0.180
+        },
+        "se(l,max)" : {
+            "v(d),sc(e),sq(x)" : 0.130,
+            "v(d),sc(c),sq(x)" : 0.200,
+            "v(s),sc(e),sq(o)" : 0.230,
+            "v(d),sc(e),sq(o)" : 0.250,
+            "v(d),sc(c),sq(o)" : 0.260,
+            "v(s),sc(c),sq(o)" : 0.260
+        },
+        "se(l,min)" : {
+            "v(d),sc(e),sq(x)" : 0.050,
+            "v(d),sc(c),sq(x)" : 0.090,
+            "v(s),sc(e),sq(o)" : 0.150,
+            "v(d),sc(e),sq(o)" : 0.160,
+            "v(s),sc(c),sq(o)" : 0.160,
+            "v(d),sc(c),sq(o)" : 0.170
+        },
+        "se(l,ran)" : {
+            "v(d),sc(c),sq(o)" : 0.120,
+            "v(d),sc(c),sq(x)" : 0.240,
+            "v(d),sc(e),sq(o)" : 0.130,
+            "v(d),sc(e),sq(x)" : 0.030,
+            "v(s),sc(c),sq(o)" : 0.300,
+            "v(s),sc(e),sq(o)" : 0.180
+        },
+        "se(mc,id)" : {
+            "v(d),sc(e),sq(x)" : 0.030,
+            "v(s),sc(e),sq(o)" : 0.110,
+            "v(d),sc(e),sq(o)" : 0.130,
+            "v(d),sc(c),sq(x)" : 0.290,
+            "v(d),sc(c),sq(o)" : 0.640,
+            "v(s),sc(c),sq(o)" : 0.640
+        },
+        "se(mc,max)" : {
+            "v(d),sc(e),sq(x)" : 0.090,
+            "v(d),sc(c),sq(x)" : 0.360,
+            "v(d),sc(e),sq(o)" : 0.360,
+            "v(s),sc(e),sq(o)" : 0.380,
+            "v(s),sc(c),sq(o)" : 0.820,
+            "v(d),sc(c),sq(o)" : 0.830
+        },
+        "se(mc,min)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.120,
+            "v(s),sc(e),sq(o)" : 0.130,
+            "v(d),sc(c),sq(x)" : 0.290,
+            "v(s),sc(c),sq(o)" : 0.630,
+            "v(d),sc(c),sq(o)" : 0.670
+        },
+        "se(mc,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(o)" : 0.280,
+            "v(s),sc(e),sq(o)" : 0.360,
+            "v(d),sc(e),sq(o)" : 0.390,
+            "v(d),sc(c),sq(x)" : 0.530,
+            "v(s),sc(c),sq(o)" : 0.870
+        },
+        "se(oc,id)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(x)" : 0.050,
+            "v(d),sc(e),sq(o)" : 0.120,
+            "v(s),sc(e),sq(o)" : 0.120,
+            "v(s),sc(c),sq(o)" : 0.150,
+            "v(d),sc(c),sq(o)" : 0.160
+        },
+        "se(oc,max)" : {
+            "v(d),sc(e),sq(x)" : 0.080,
+            "v(d),sc(c),sq(x)" : 0.130,
+            "v(s),sc(c),sq(o)" : 0.230,
+            "v(d),sc(c),sq(o)" : 0.240,
+            "v(d),sc(e),sq(o)" : 0.350,
+            "v(s),sc(e),sq(o)" : 0.360
+        },
+        "se(oc,min)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(e),sq(o)" : 0.120,
+            "v(s),sc(e),sq(o)" : 0.120,
+            "v(d),sc(c),sq(o)" : 0.150,
+            "v(s),sc(c),sq(o)" : 0.150
+        },
+        "se(oc,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.050,
+            "v(d),sc(c),sq(x)" : 0.120,
+            "v(s),sc(e),sq(o)" : 0.150,
+            "v(s),sc(c),sq(o)" : 0.160,
+            "v(d),sc(c),sq(o)" : 0.180,
+            "v(d),sc(e),sq(o)" : 0.270
+        },
+        "se(s,id)" : {
+            "v(d),sc(e),sq(x)" : 0.030,
+            "v(d),sc(c),sq(x)" : 0.060,
+            "v(d),sc(e),sq(o)" : 0.230,
+            "v(s),sc(e),sq(o)" : 0.230,
+            "v(d),sc(c),sq(o)" : 0.290,
+            "v(s),sc(c),sq(o)" : 0.300
+        },
+        "se(s,max)" : {
+            "v(d),sc(e),sq(x)" : 0.120,
+            "v(d),sc(c),sq(x)" : 0.150,
+            "v(d),sc(e),sq(o)" : 0.390,
+            "v(s),sc(e),sq(o)" : 0.390,
+            "v(d),sc(c),sq(o)" : 0.420,
+            "v(s),sc(c),sq(o)" : 0.440
+        },
+        "se(s,min)" : {
+            "v(d),sc(e),sq(x)" : 0.030,
+            "v(d),sc(c),sq(x)" : 0.050,
+            "v(s),sc(e),sq(o)" : 0.220,
+            "v(d),sc(e),sq(o)" : 0.230,
+            "v(d),sc(c),sq(o)" : 0.240,
+            "v(s),sc(c),sq(o)" : 0.250
+        },
+        "se(s,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.110,
+            "v(s),sc(e),sq(o)" : 0.120,
+            "v(d),sc(c),sq(x)" : 0.140,
+            "v(d),sc(c),sq(o)" : 0.190,
+            "v(d),sc(e),sq(o)" : 0.380,
+            "v(s),sc(c),sq(o)" : 0.670
+        }
+    },
+    "b1" : {
+        "se(ff,id)" : {
+            "v(d),sc(e),sq(x)" : 1.910,
+            "v(d),sc(c),sq(x)" : 3.980,
+            "v(s),sc(c),sq(o)" : 8.260,
+            "v(d),sc(c),sq(o)" : 8.300,
+            "v(d),sc(e),sq(o)" : 1.340,
+            "v(s),sc(e),sq(o)" : 1.360
+        },
+        "se(ff,max)" : {
+            "v(s),sc(c),sq(o)" : 0.520,
+            "v(d),sc(c),sq(o)" : 0.540,
+            "v(d),sc(c),sq(x)" : 0.830,
+            "v(d),sc(e),sq(x)" : 0.850,
+            "v(s),sc(e),sq(o)" : 6.480,
+            "v(d),sc(e),sq(o)" : 7.040
+        },
+        "se(ff,min)" : {
+            "v(d),sc(e),sq(x)" : 2.030,
+            "v(d),sc(c),sq(x)" : 4.080,
+            "v(s),sc(c),sq(o)" : 8.300,
+            "v(d),sc(c),sq(o)" : 8.480,
+            "v(d),sc(e),sq(o)" : 1.310,
+            "v(s),sc(e),sq(o)" : 1.350
+        },
+        "se(ff,ran)" : {
+            "v(d),sc(c),sq(o)" : 1.220,
+            "v(d),sc(e),sq(x)" : 1.260,
+            "v(s),sc(c),sq(o)" : 3.220,
+            "v(d),sc(c),sq(x)" : 3.850,
+            "v(s),sc(e),sq(o)" : 9.710,
+            "v(d),sc(e),sq(o)" : 14.87
+        },
+        "se(io,id)" : {
+            "v(d),sc(e),sq(x)" : 1.230,
+            "v(d),sc(c),sq(x)" : 3.500,
+            "v(s),sc(c),sq(o)" : 8.290,
+            "v(d),sc(c),sq(o)" : 8.360,
+            "v(d),sc(e),sq(o)" : 1.120,
+            "v(s),sc(e),sq(o)" : 1.200
+        },
+        "se(io,max)" : {
+            "v(d),sc(c),sq(o)" : 0.520,
+            "v(s),sc(c),sq(o)" : 0.530,
+            "v(d),sc(e),sq(x)" : 0.580,
+            "v(d),sc(c),sq(x)" : 0.730,
+            "v(s),sc(e),sq(o)" : 6.400,
+            "v(d),sc(e),sq(o)" : 6.420
+        },
+        "se(io,min)" : {
+            "v(d),sc(e),sq(x)" : 1.350,
+            "v(d),sc(c),sq(x)" : 3.580,
+            "v(d),sc(c),sq(o)" : 8.230,
+            "v(s),sc(c),sq(o)" : 8.330,
+            "v(d),sc(e),sq(o)" : 1.110,
+            "v(s),sc(e),sq(o)" : 1.220
+        },
+        "se(io,ran)" : {
+            "v(d),sc(c),sq(x)" : 1.160,
+            "v(d),sc(e),sq(x)" : 1.480,
+            "v(s),sc(e),sq(o)" : 1.810,
+            "v(d),sc(c),sq(o)" : 3.880,
+            "v(s),sc(c),sq(o)" : 5.990,
+            "v(d),sc(e),sq(o)" : 12.70
+        },
+        "se(l,id)" : {
+            "v(d),sc(e),sq(x)" : 4.410,
+            "v(d),sc(c),sq(x)" : 9.090,
+            "v(d),sc(c),sq(o)" : 13.23,
+            "v(s),sc(c),sq(o)" : 13.46,
+            "v(s),sc(e),sq(o)" : 23.93,
+            "v(d),sc(e),sq(o)" : 25.60
+        },
+        "se(l,max)" : {
+            "v(d),sc(e),sq(x)" : 0.290,
+            "v(d),sc(c),sq(x)" : 0.350,
+            "v(d),sc(c),sq(o)" : 0.990,
+            "v(s),sc(c),sq(o)" : 1.000,
+            "v(s),sc(e),sq(o)" : 1.420,
+            "v(d),sc(e),sq(o)" : 1.480
+        },
+        "se(l,min)" : {
+            "v(d),sc(e),sq(x)" : 4.290,
+            "v(d),sc(c),sq(x)" : 7.960,
+            "v(d),sc(c),sq(o)" : 1.920,
+            "v(s),sc(c),sq(o)" : 11.50,
+            "v(s),sc(e),sq(o)" : 2.890,
+            "v(d),sc(e),sq(o)" : 22.39
+        },
+        "se(l,ran)" : {
+            "v(d),sc(e),sq(x)" : 2.350,
+            "v(s),sc(c),sq(o)" : 2.740,
+            "v(d),sc(c),sq(x)" : 7.370,
+            "v(d),sc(c),sq(o)" : 12.32,
+            "v(s),sc(e),sq(o)" : 12.51,
+            "v(d),sc(e),sq(o)" : 21.73
+        },
+        "se(mc,id)" : {
+            "v(d),sc(e),sq(x)" : 3.320,
+            "v(d),sc(c),sq(x)" : 3.380,
+            "v(d),sc(c),sq(o)" : 8.020,
+            "v(s),sc(c),sq(o)" : 8.080,
+            "v(s),sc(e),sq(o)" : 1.820,
+            "v(d),sc(e),sq(o)" : 11.78
+        },
+        "se(mc,max)" : {
+            "v(d),sc(c),sq(o)" : 1.140,
+            "v(s),sc(c),sq(o)" : 1.200,
+            "v(d),sc(e),sq(x)" : 1.400,
+            "v(d),sc(c),sq(x)" : 4.740,
+            "v(s),sc(e),sq(o)" : 6.760,
+            "v(d),sc(e),sq(o)" : 7.630
+        },
+        "se(mc,min)" : {
+            "v(d),sc(c),sq(x)" : 3.430,
+            "v(d),sc(e),sq(x)" : 3.460,
+            "v(d),sc(c),sq(o)" : 8.050,
+            "v(s),sc(c),sq(o)" : 8.060,
+            "v(s),sc(e),sq(o)" : 1.660,
+            "v(d),sc(e),sq(o)" : 12.12
+        },
+        "se(mc,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.560,
+            "v(d),sc(c),sq(x)" : 2.060,
+            "v(s),sc(e),sq(o)" : 2.720,
+            "v(d),sc(e),sq(o)" : 6.580,
+            "v(d),sc(c),sq(o)" : 7.430,
+            "v(s),sc(c),sq(o)" : 8.080
+        },
+        "se(oc,id)" : {
+            "v(d),sc(e),sq(x)" : 2.540,
+            "v(d),sc(c),sq(x)" : 1.010,
+            "v(s),sc(e),sq(o)" : 1.400,
+            "v(d),sc(e),sq(o)" : 12.19,
+            "v(d),sc(c),sq(o)" : 15.70,
+            "v(s),sc(c),sq(o)" : 15.80
+        },
+        "se(oc,max)" : {
+            "v(d),sc(c),sq(x)" : 0.380,
+            "v(d),sc(c),sq(o)" : 0.690,
+            "v(s),sc(c),sq(o)" : 0.690,
+            "v(d),sc(e),sq(x)" : 1.130,
+            "v(s),sc(e),sq(o)" : 6.700,
+            "v(d),sc(e),sq(o)" : 7.180
+        },
+        "se(oc,min)" : {
+            "v(d),sc(e),sq(x)" : 2.710,
+            "v(d),sc(c),sq(x)" : 8.420,
+            "v(s),sc(e),sq(o)" : 1.610,
+            "v(s),sc(c),sq(o)" : 12.15,
+            "v(d),sc(c),sq(o)" : 12.16,
+            "v(d),sc(e),sq(o)" : 12.20
+        },
+        "se(oc,ran)" : {
+            "v(d),sc(e),sq(x)" : 1.660,
+            "v(d),sc(e),sq(o)" : 4.490,
+            "v(d),sc(c),sq(x)" : 6.860,
+            "v(s),sc(e),sq(o)" : 7.460,
+            "v(s),sc(c),sq(o)" : 12.20,
+            "v(d),sc(c),sq(o)" : 12.82
+        },
+        "se(s,id)" : {
+            "v(d),sc(e),sq(x)" : 0.240,
+            "v(d),sc(c),sq(x)" : 0.810,
+            "v(s),sc(e),sq(o)" : 2.730,
+            "v(d),sc(e),sq(o)" : 2.810,
+            "v(s),sc(c),sq(o)" : 3.360,
+            "v(d),sc(c),sq(o)" : 3.380
+        },
+        "se(s,max)" : {
+            "v(d),sc(e),sq(x)" : 3.310,
+            "v(d),sc(c),sq(x)" : 5.670,
+            "v(d),sc(c),sq(o)" : 8.250,
+            "v(s),sc(c),sq(o)" : 8.280,
+            "v(s),sc(e),sq(o)" : 16.67,
+            "v(d),sc(e),sq(o)" : 16.99
+        },
+        "se(s,min)" : {
+            "v(d),sc(e),sq(x)" : 0.220,
+            "v(d),sc(c),sq(x)" : 0.660,
+            "v(s),sc(e),sq(o)" : 2.490,
+            "v(d),sc(e),sq(o)" : 2.500,
+            "v(s),sc(c),sq(o)" : 2.690,
+            "v(d),sc(c),sq(o)" : 2.710
+        },
+        "se(s,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.920,
+            "v(d),sc(c),sq(o)" : 2.080,
+            "v(d),sc(c),sq(x)" : 2.620,
+            "v(s),sc(c),sq(o)" : 7.030,
+            "v(s),sc(e),sq(o)" : 1.710,
+            "v(d),sc(e),sq(o)" : 14.10
+        }
+    },
+    "61" : {
+        "se(ff,id)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.090,
+            "v(d),sc(e),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.090
+        },
+        "se(ff,max)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.070,
+            "v(s),sc(e),sq(o)" : 0.070,
+            "v(d),sc(c),sq(o)" : 0.100,
+            "v(s),sc(c),sq(o)" : 0.100
+        },
+        "se(ff,min)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(c),sq(o)" : 0.090,
+            "v(d),sc(e),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.090,
+            "v(s),sc(e),sq(o)" : 0.090
+        },
+        "se(ff,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(s),sc(c),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.100,
+            "v(d),sc(e),sq(o)" : 0.100,
+            "v(s),sc(e),sq(o)" : 0.110
+        },
+        "se(io,id)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.090
+        },
+        "se(io,max)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(s),sc(e),sq(o)" : 0.070,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(c),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.100
+        },
+        "se(io,min)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.090
+        },
+        "se(io,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(s),sc(e),sq(o)" : 0.060,
+            "v(d),sc(e),sq(o)" : 0.070,
+            "v(s),sc(c),sq(o)" : 0.070,
+            "v(d),sc(c),sq(o)" : 0.110
+        },
+        "se(l,id)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(x)" : 0.040,
+            "v(d),sc(e),sq(o)" : 0.130,
+            "v(s),sc(e),sq(o)" : 0.130,
+            "v(s),sc(c),sq(o)" : 0.140,
+            "v(d),sc(c),sq(o)" : 0.150
+        },
+        "se(l,max)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(e),sq(o)" : 0.120,
+            "v(s),sc(e),sq(o)" : 0.120,
+            "v(d),sc(c),sq(o)" : 0.140,
+            "v(s),sc(c),sq(o)" : 0.140
+        },
+        "se(l,min)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(e),sq(o)" : 0.120,
+            "v(s),sc(e),sq(o)" : 0.120,
+            "v(d),sc(c),sq(o)" : 0.130,
+            "v(s),sc(c),sq(o)" : 0.140
+        },
+        "se(l,ran)" : {
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(e),sq(x)" : 0.030,
+            "v(d),sc(e),sq(o)" : 0.100,
+            "v(s),sc(e),sq(o)" : 0.170,
+            "v(d),sc(c),sq(o)" : 0.220,
+            "v(s),sc(c),sq(o)" : 0.240
+        },
+        "se(mc,id)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.050,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.160,
+            "v(s),sc(c),sq(o)" : 0.160
+        },
+        "se(mc,max)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.110,
+            "v(s),sc(c),sq(o)" : 0.110
+        },
+        "se(mc,min)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.050,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.160,
+            "v(s),sc(c),sq(o)" : 0.160
+        },
+        "se(mc,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(s),sc(e),sq(o)" : 0.060,
+            "v(d),sc(e),sq(o)" : 0.070,
+            "v(s),sc(c),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.160
+        },
+        "se(oc,id)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.050,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.180,
+            "v(d),sc(c),sq(o)" : 0.190
+        },
+        "se(oc,max)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.070,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(c),sq(o)" : 0.150,
+            "v(d),sc(c),sq(o)" : 0.160
+        },
+        "se(oc,min)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(e),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.150,
+            "v(d),sc(c),sq(o)" : 0.160
+        },
+        "se(oc,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.050,
+            "v(d),sc(e),sq(o)" : 0.090,
+            "v(s),sc(e),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.190,
+            "v(s),sc(c),sq(o)" : 0.200
+        },
+        "se(s,id)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(c),sq(o)" : 0.080,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(s),sc(c),sq(o)" : 0.090
+        },
+        "se(s,max)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(s),sc(e),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.100,
+            "v(d),sc(e),sq(o)" : 0.100,
+            "v(s),sc(c),sq(o)" : 0.110
+        },
+        "se(s,min)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(s),sc(e),sq(o)" : 0.070,
+            "v(d),sc(c),sq(o)" : 0.080,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(c),sq(o)" : 0.080
+        },
+        "se(s,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.060,
+            "v(s),sc(e),sq(o)" : 0.070,
+            "v(d),sc(c),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.090
+        }
+    },
+    "62" : {
+        "se(ff,id)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(s),sc(e),sq(o)" : 0.040,
+            "v(d),sc(e),sq(o)" : 0.050,
+            "v(s),sc(c),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060
+        },
+        "se(ff,max)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(s),sc(e),sq(o)" : 0.040,
+            "v(d),sc(c),sq(o)" : 0.050,
+            "v(d),sc(e),sq(o)" : 0.050,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(ff,min)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(ff,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.050,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(io,id)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(io,max)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(o)" : 0.050,
+            "v(d),sc(e),sq(o)" : 0.050,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(io,min)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(s),sc(e),sq(o)" : 0.040,
+            "v(d),sc(c),sq(o)" : 0.050,
+            "v(d),sc(e),sq(o)" : 0.050,
+            "v(s),sc(c),sq(o)" : 0.050
+        },
+        "se(io,ran)" : {
+            "v(d),sc(c),sq(x)" : 0.000,
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(l,id)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(c),sq(o)" : 0.050,
+            "v(d),sc(e),sq(o)" : 0.050,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(l,max)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.050,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(l,min)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.040,
+            "v(s),sc(c),sq(o)" : 0.060,
+            "v(d),sc(c),sq(o)" : 0.070
+        },
+        "se(l,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(s),sc(c),sq(o)" : 0.060,
+            "v(d),sc(c),sq(o)" : 0.070
+        },
+        "se(mc,id)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(mc,max)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(mc,min)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(s),sc(e),sq(o)" : 0.040,
+            "v(d),sc(e),sq(o)" : 0.050,
+            "v(s),sc(c),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060
+        },
+        "se(mc,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(c),sq(o)" : 0.050,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.070
+        },
+        "se(oc,id)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(s),sc(e),sq(o)" : 0.040,
+            "v(d),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(oc,max)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.070
+        },
+        "se(oc,min)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.040,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(oc,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(s),sc(e),sq(o)" : 0.040,
+            "v(d),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(s,id)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(s),sc(e),sq(o)" : 0.040,
+            "v(d),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(s,max)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.040,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(s,min)" : {
+            "v(d),sc(e),sq(x)" : 0.000,
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(d),sc(c),sq(o)" : 0.050,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(s),sc(c),sq(o)" : 0.060
+        },
+        "se(s,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.040,
+            "v(s),sc(e),sq(o)" : 0.050,
+            "v(d),sc(c),sq(o)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.060
+        }
+    },
+    "63" : {
+        "se(ff,id)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.090
+        },
+        "se(ff,max)" : {
+            "v(d),sc(e),sq(x)" : 0.090,
+            "v(d),sc(c),sq(x)" : 0.120,
+            "v(d),sc(c),sq(o)" : 0.160,
+            "v(s),sc(c),sq(o)" : 0.160,
+            "v(s),sc(e),sq(o)" : 0.280,
+            "v(d),sc(e),sq(o)" : 0.290
+        },
+        "se(ff,min)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(c),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.090
+        },
+        "se(ff,ran)" : {
+            "v(d),sc(c),sq(x)" : 0.050,
+            "v(d),sc(e),sq(x)" : 0.060,
+            "v(d),sc(e),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.160,
+            "v(s),sc(e),sq(o)" : 0.240
+        },
+        "se(io,id)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.100
+        },
+        "se(io,max)" : {
+            "v(d),sc(e),sq(x)" : 0.060,
+            "v(d),sc(c),sq(x)" : 0.110,
+            "v(s),sc(c),sq(o)" : 0.150,
+            "v(d),sc(c),sq(o)" : 0.160,
+            "v(d),sc(e),sq(o)" : 0.270,
+            "v(s),sc(e),sq(o)" : 0.270
+        },
+        "se(io,min)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.090
+        },
+        "se(io,ran)" : {
+            "v(d),sc(c),sq(x)" : 0.040,
+            "v(d),sc(e),sq(x)" : 0.050,
+            "v(s),sc(c),sq(o)" : 0.150,
+            "v(d),sc(c),sq(o)" : 0.160,
+            "v(s),sc(e),sq(o)" : 0.260,
+            "v(d),sc(e),sq(o)" : 0.270
+        },
+        "se(l,id)" : {
+            "v(d),sc(e),sq(x)" : 0.060,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(s),sc(c),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.100,
+            "v(d),sc(c),sq(x)" : 0.100
+        },
+        "se(l,max)" : {
+            "v(d),sc(e),sq(x)" : 0.060,
+            "v(d),sc(c),sq(x)" : 0.070,
+            "v(d),sc(c),sq(o)" : 0.160,
+            "v(s),sc(c),sq(o)" : 0.170,
+            "v(d),sc(e),sq(o)" : 0.300,
+            "v(s),sc(e),sq(o)" : 0.300
+        },
+        "se(l,min)" : {
+            "v(d),sc(e),sq(x)" : 0.070,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(c),sq(x)" : 0.090,
+            "v(d),sc(e),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.090,
+            "v(d),sc(c),sq(o)" : 0.100
+        },
+        "se(l,ran)" : {
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(c),sq(o)" : 0.100,
+            "v(d),sc(e),sq(x)" : 0.110,
+            "v(s),sc(e),sq(o)" : 0.110,
+            "v(d),sc(e),sq(o)" : 0.150,
+            "v(s),sc(c),sq(o)" : 0.170
+        },
+        "se(mc,id)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(x)" : 0.030,
+            "v(d),sc(c),sq(o)" : 0.070,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(c),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080
+        },
+        "se(mc,max)" : {
+            "v(d),sc(e),sq(x)" : 0.150,
+            "v(d),sc(e),sq(o)" : 0.290,
+            "v(s),sc(e),sq(o)" : 0.290,
+            "v(d),sc(c),sq(o)" : 0.380,
+            "v(s),sc(c),sq(o)" : 0.390,
+            "v(d),sc(c),sq(x)" : 0.750
+        },
+        "se(mc,min)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(c),sq(o)" : 0.080,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(c),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080
+        },
+        "se(mc,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.080,
+            "v(d),sc(e),sq(o)" : 0.120,
+            "v(s),sc(e),sq(o)" : 0.120,
+            "v(d),sc(c),sq(x)" : 0.130,
+            "v(s),sc(c),sq(o)" : 0.250,
+            "v(d),sc(c),sq(o)" : 0.360
+        },
+        "se(oc,id)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.160,
+            "v(s),sc(c),sq(o)" : 0.160,
+            "v(d),sc(c),sq(x)" : 0.210
+        },
+        "se(oc,max)" : {
+            "v(d),sc(c),sq(x)" : 0.100,
+            "v(d),sc(e),sq(x)" : 0.120,
+            "v(d),sc(c),sq(o)" : 0.240,
+            "v(s),sc(c),sq(o)" : 0.240,
+            "v(s),sc(e),sq(o)" : 0.280,
+            "v(d),sc(e),sq(o)" : 0.290
+        },
+        "se(oc,min)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(e),sq(o)" : 0.070,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.160,
+            "v(s),sc(c),sq(o)" : 0.160,
+            "v(d),sc(c),sq(x)" : 0.190
+        },
+        "se(oc,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.060,
+            "v(s),sc(c),sq(o)" : 0.110,
+            "v(d),sc(c),sq(x)" : 0.130,
+            "v(d),sc(c),sq(o)" : 0.190,
+            "v(s),sc(e),sq(o)" : 0.250,
+            "v(d),sc(e),sq(o)" : 0.260
+        },
+        "se(s,id)" : {
+            "v(d),sc(e),sq(x)" : 0.040,
+            "v(d),sc(c),sq(x)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.210,
+            "v(s),sc(c),sq(o)" : 0.210,
+            "v(s),sc(e),sq(o)" : 0.350,
+            "v(d),sc(e),sq(o)" : 0.370
+        },
+        "se(s,max)" : {
+            "v(d),sc(c),sq(o)" : 0.090,
+            "v(s),sc(c),sq(o)" : 0.090,
+            "v(d),sc(e),sq(x)" : 0.110,
+            "v(d),sc(e),sq(o)" : 0.120,
+            "v(s),sc(e),sq(o)" : 0.120,
+            "v(d),sc(c),sq(x)" : 0.160
+        },
+        "se(s,min)" : {
+            "v(d),sc(e),sq(x)" : 0.050,
+            "v(d),sc(c),sq(x)" : 0.080,
+            "v(d),sc(c),sq(o)" : 0.200,
+            "v(s),sc(c),sq(o)" : 0.200,
+            "v(d),sc(e),sq(o)" : 0.320,
+            "v(s),sc(e),sq(o)" : 0.330
+        },
+        "se(s,ran)" : {
+            "v(d),sc(c),sq(x)" : 0.100,
+            "v(d),sc(e),sq(o)" : 0.130,
+            "v(d),sc(e),sq(x)" : 0.130,
+            "v(s),sc(c),sq(o)" : 0.180,
+            "v(d),sc(c),sq(o)" : 0.210,
+            "v(s),sc(e),sq(o)" : 0.350
+        }
+    },
+    "861" : {
+        "se(ff,id)" : {
+            "v(d),sc(e),sq(x)" : 0.030,
+            "v(d),sc(c),sq(x)" : 0.070,
+            "v(s),sc(e),sq(o)" : 0.330,
+            "v(d),sc(e),sq(o)" : 0.340,
+            "v(d),sc(c),sq(o)" : 0.390,
+            "v(s),sc(c),sq(o)" : 0.390
+        },
+        "se(ff,max)" : {
+            "v(d),sc(e),sq(x)" : 0.340,
+            "v(d),sc(c),sq(x)" : 0.480,
+            "v(d),sc(c),sq(o)" : 1.070,
+            "v(s),sc(c),sq(o)" : 1.080,
+            "v(s),sc(e),sq(o)" : 2.160,
+            "v(d),sc(e),sq(o)" : 2.230
+        },
+        "se(ff,min)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(x)" : 0.070,
+            "v(s),sc(e),sq(o)" : 0.330,
+            "v(d),sc(e),sq(o)" : 0.340,
+            "v(d),sc(c),sq(o)" : 0.390,
+            "v(s),sc(c),sq(o)" : 0.390
+        },
+        "se(ff,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.160,
+            "v(d),sc(c),sq(o)" : 0.190,
+            "v(s),sc(c),sq(o)" : 0.570,
+            "v(d),sc(e),sq(o)" : 1.280,
+            "v(s),sc(e),sq(o)" : 1.780
+        },
+        "se(io,id)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(x)" : 0.070,
+            "v(d),sc(e),sq(o)" : 0.330,
+            "v(s),sc(e),sq(o)" : 0.330,
+            "v(d),sc(c),sq(o)" : 0.380,
+            "v(s),sc(c),sq(o)" : 0.380
+        },
+        "se(io,max)" : {
+            "v(d),sc(e),sq(x)" : 0.240,
+            "v(d),sc(c),sq(x)" : 0.440,
+            "v(d),sc(c),sq(o)" : 1.040,
+            "v(s),sc(c),sq(o)" : 1.060,
+            "v(s),sc(e),sq(o)" : 2.120,
+            "v(d),sc(e),sq(o)" : 2.160
+        },
+        "se(io,min)" : {
+            "v(d),sc(e),sq(x)" : 0.020,
+            "v(d),sc(c),sq(x)" : 0.070,
+            "v(s),sc(e),sq(o)" : 0.320,
+            "v(d),sc(e),sq(o)" : 0.330,
+            "v(d),sc(c),sq(o)" : 0.380,
+            "v(s),sc(c),sq(o)" : 0.380
+        },
+        "se(io,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.210,
+            "v(d),sc(c),sq(x)" : 0.320,
+            "v(s),sc(c),sq(o)" : 0.830,
+            "v(d),sc(c),sq(o)" : 0.850,
+            "v(s),sc(e),sq(o)" : 0.900,
+            "v(d),sc(e),sq(o)" : 1.920
+        },
+        "se(l,id)" : {
+            "v(d),sc(e),sq(x)" : 0.210,
+            "v(d),sc(c),sq(x)" : 0.350,
+            "v(d),sc(c),sq(o)" : 0.840,
+            "v(s),sc(c),sq(o)" : 0.840,
+            "v(s),sc(e),sq(o)" : 1.470,
+            "v(d),sc(e),sq(o)" : 1.490
+        },
+        "se(l,max)" : {
+            "v(d),sc(e),sq(x)" : 0.320,
+            "v(d),sc(c),sq(o)" : 0.380,
+            "v(s),sc(c),sq(o)" : 0.380,
+            "v(d),sc(c),sq(x)" : 0.520,
+            "v(d),sc(e),sq(o)" : 0.560,
+            "v(s),sc(e),sq(o)" : 0.570
+        },
+        "se(l,min)" : {
+            "v(d),sc(e),sq(x)" : 0.210,
+            "v(d),sc(c),sq(x)" : 0.320,
+            "v(s),sc(c),sq(o)" : 0.720,
+            "v(d),sc(c),sq(o)" : 0.750,
+            "v(s),sc(e),sq(o)" : 1.260,
+            "v(d),sc(e),sq(o)" : 1.280
+        },
+        "se(l,ran)" : {
+            "v(d),sc(c),sq(o)" : 0.300,
+            "v(d),sc(e),sq(o)" : 0.420,
+            "v(s),sc(e),sq(o)" : 0.450,
+            "v(d),sc(e),sq(x)" : 0.540,
+            "v(d),sc(c),sq(x)" : 0.620,
+            "v(s),sc(c),sq(o)" : 0.980
+        },
+        "se(mc,id)" : {
+            "v(d),sc(e),sq(x)" : 0.030,
+            "v(s),sc(e),sq(o)" : 0.340,
+            "v(d),sc(e),sq(o)" : 0.350,
+            "v(d),sc(c),sq(x)" : 1.050,
+            "v(d),sc(c),sq(o)" : 2.240,
+            "v(s),sc(c),sq(o)" : 2.240
+        },
+        "se(mc,max)" : {
+            "v(d),sc(e),sq(x)" : 0.570,
+            "v(s),sc(e),sq(o)" : 2.310,
+            "v(d),sc(e),sq(o)" : 2.340,
+            "v(d),sc(c),sq(x)" : 2.950,
+            "v(s),sc(c),sq(o)" : 5.860,
+            "v(d),sc(c),sq(o)" : 6.010
+        },
+        "se(mc,min)" : {
+            "v(d),sc(e),sq(x)" : 0.040,
+            "v(d),sc(e),sq(o)" : 0.340,
+            "v(s),sc(e),sq(o)" : 0.340,
+            "v(d),sc(c),sq(x)" : 1.070,
+            "v(s),sc(c),sq(o)" : 2.200,
+            "v(d),sc(c),sq(o)" : 2.240
+        },
+        "se(mc,ran)" : {
+            "v(d),sc(c),sq(x)" : 0.450,
+            "v(d),sc(e),sq(x)" : 0.610,
+            "v(s),sc(e),sq(o)" : 0.680,
+            "v(d),sc(e),sq(o)" : 1.150,
+            "v(s),sc(c),sq(o)" : 3.080,
+            "v(d),sc(c),sq(o)" : 5.120
+        },
+        "se(oc,id)" : {
+            "v(d),sc(e),sq(x)" : 0.030,
+            "v(d),sc(e),sq(o)" : 0.340,
+            "v(s),sc(e),sq(o)" : 0.340,
+            "v(d),sc(c),sq(x)" : 0.400,
+            "v(d),sc(c),sq(o)" : 0.900,
+            "v(s),sc(c),sq(o)" : 0.930
+        },
+        "se(oc,max)" : {
+            "v(d),sc(e),sq(x)" : 0.450,
+            "v(d),sc(c),sq(x)" : 0.490,
+            "v(s),sc(c),sq(o)" : 0.540,
+            "v(d),sc(c),sq(o)" : 0.550,
+            "v(s),sc(e),sq(o)" : 2.230,
+            "v(d),sc(e),sq(o)" : 2.340
+        },
+        "se(oc,min)" : {
+            "v(d),sc(e),sq(x)" : 0.040,
+            "v(d),sc(c),sq(x)" : 0.330,
+            "v(s),sc(e),sq(o)" : 0.330,
+            "v(d),sc(e),sq(o)" : 0.340,
+            "v(d),sc(c),sq(o)" : 0.760,
+            "v(s),sc(c),sq(o)" : 0.780
+        },
+        "se(oc,ran)" : {
+            "v(d),sc(c),sq(x)" : 0.090,
+            "v(d),sc(e),sq(x)" : 0.110,
+            "v(d),sc(c),sq(o)" : 0.500,
+            "v(s),sc(c),sq(o)" : 1.170,
+            "v(d),sc(e),sq(o)" : 1.980,
+            "v(s),sc(e),sq(o)" : 2.330
+        },
+        "se(s,id)" : {
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(x)" : 0.020,
+            "v(d),sc(c),sq(o)" : 0.080,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(s),sc(c),sq(o)" : 0.090
+        },
+        "se(s,max)" : {
+            "v(d),sc(e),sq(x)" : 0.460,
+            "v(d),sc(c),sq(x)" : 0.680,
+            "v(s),sc(c),sq(o)" : 1.550,
+            "v(d),sc(c),sq(o)" : 1.600,
+            "v(s),sc(e),sq(o)" : 2.720,
+            "v(d),sc(e),sq(o)" : 2.780
+        },
+        "se(s,min)" : {
+            "v(d),sc(c),sq(x)" : 0.010,
+            "v(d),sc(e),sq(x)" : 0.010,
+            "v(d),sc(c),sq(o)" : 0.080,
+            "v(d),sc(e),sq(o)" : 0.080,
+            "v(s),sc(e),sq(o)" : 0.080,
+            "v(s),sc(c),sq(o)" : 0.090
+        },
+        "se(s,ran)" : {
+            "v(d),sc(c),sq(x)" : 0.140,
+            "v(d),sc(e),sq(x)" : 0.450,
+            "v(d),sc(c),sq(o)" : 0.520,
+            "v(d),sc(e),sq(o)" : 0.750,
+            "v(s),sc(e),sq(o)" : 1.050,
+            "v(s),sc(c),sq(o)" : 1.310
+        }
+    },
+    "13" : {
+        "se(ff,id)" : {
+            "v(d),sc(e),sq(x)" : 2.980,
+            "v(d),sc(c),sq(o)" : 3.160,
+            "v(s),sc(c),sq(o)" : 3.180,
+            "v(d),sc(c),sq(x)" : 4.910,
+            "v(d),sc(e),sq(o)" : 6.210,
+            "v(s),sc(e),sq(o)" : 6.240
+        },
+        "se(ff,max)" : {
+            "v(d),sc(c),sq(o)" : 0.690,
+            "v(s),sc(c),sq(o)" : 0.690,
+            "v(d),sc(e),sq(o)" : 0.700,
+            "v(s),sc(e),sq(o)" : 0.700,
+            "v(d),sc(e),sq(x)" : 4.340,
+            "v(d),sc(c),sq(x)" : 7.050
+        },
+        "se(ff,min)" : {
+            "v(d),sc(c),sq(o)" : 3.200,
+            "v(d),sc(e),sq(x)" : 3.200,
+            "v(s),sc(c),sq(o)" : 3.230,
+            "v(d),sc(c),sq(x)" : 5.050,
+            "v(d),sc(e),sq(o)" : 6.230,
+            "v(s),sc(e),sq(o)" : 6.250
+        },
+        "se(ff,ran)" : {
+            "v(d),sc(c),sq(o)" : 0.710,
+            "v(s),sc(c),sq(o)" : 1.390,
+            "v(d),sc(e),sq(o)" : 2.930,
+            "v(d),sc(e),sq(x)" : 4.910,
+            "v(s),sc(e),sq(o)" : 6.110,
+            "v(d),sc(c),sq(x)" : 8.510
+        },
+        "se(io,id)" : {
+            "v(d),sc(e),sq(x)" : 2.120,
+            "v(d),sc(c),sq(o)" : 3.130,
+            "v(s),sc(c),sq(o)" : 3.140,
+            "v(d),sc(c),sq(x)" : 4.350,
+            "v(d),sc(e),sq(o)" : 6.030,
+            "v(s),sc(e),sq(o)" : 6.050
+        },
+        "se(io,max)" : {
+            "v(s),sc(c),sq(o)" : 0.670,
+            "v(d),sc(c),sq(o)" : 0.680,
+            "v(d),sc(e),sq(o)" : 0.680,
+            "v(s),sc(e),sq(o)" : 0.680,
+            "v(d),sc(e),sq(x)" : 3.130,
+            "v(d),sc(c),sq(x)" : 6.220
+        },
+        "se(io,min)" : {
+            "v(d),sc(e),sq(x)" : 2.310,
+            "v(s),sc(c),sq(o)" : 3.100,
+            "v(d),sc(c),sq(o)" : 3.110,
+            "v(d),sc(c),sq(x)" : 4.460,
+            "v(d),sc(e),sq(o)" : 6.050,
+            "v(s),sc(e),sq(o)" : 6.090
+        },
+        "se(io,ran)" : {
+            "v(s),sc(e),sq(o)" : 0.700,
+            "v(d),sc(c),sq(o)" : 1.820,
+            "v(s),sc(c),sq(o)" : 2.460,
+            "v(d),sc(e),sq(x)" : 4.100,
+            "v(d),sc(e),sq(o)" : 6.530,
+            "v(d),sc(c),sq(x)" : 9.760
+        },
+        "se(l,id)" : {
+            "v(d),sc(c),sq(o)" : 4.290,
+            "v(s),sc(c),sq(o)" : 4.320,
+            "v(d),sc(e),sq(x)" : 5.320,
+            "v(d),sc(c),sq(x)" : 8.910,
+            "v(d),sc(e),sq(o)" : 1.240,
+            "v(s),sc(e),sq(o)" : 1.310
+        },
+        "se(l,max)" : {
+            "v(d),sc(e),sq(o)" : 2.100,
+            "v(d),sc(c),sq(o)" : 2.120,
+            "v(s),sc(e),sq(o)" : 2.150,
+            "v(s),sc(c),sq(o)" : 2.230,
+            "v(d),sc(e),sq(x)" : 7.740,
+            "v(d),sc(c),sq(x)" : 11.75
+        },
+        "se(l,min)" : {
+            "v(d),sc(c),sq(o)" : 3.650,
+            "v(s),sc(c),sq(o)" : 3.700,
+            "v(d),sc(e),sq(x)" : 5.110,
+            "v(d),sc(c),sq(x)" : 7.940,
+            "v(d),sc(e),sq(o)" : 8.580,
+            "v(s),sc(e),sq(o)" : 8.690
+        },
+        "se(l,ran)" : {
+            "v(s),sc(c),sq(o)" : 0.950,
+            "v(d),sc(c),sq(x)" : 1.990,
+            "v(d),sc(e),sq(o)" : 5.720,
+            "v(d),sc(c),sq(o)" : 5.790,
+            "v(s),sc(e),sq(o)" : 5.940,
+            "v(d),sc(e),sq(x)" : 7.950
+        },
+        "se(mc,id)" : {
+            "v(d),sc(c),sq(o)" : 0.730,
+            "v(s),sc(c),sq(o)" : 0.730,
+            "v(d),sc(c),sq(x)" : 0.790,
+            "v(d),sc(e),sq(x)" : 4.700,
+            "v(d),sc(e),sq(o)" : 6.490,
+            "v(s),sc(e),sq(o)" : 6.600
+        },
+        "se(mc,max)" : {
+            "v(d),sc(e),sq(o)" : 0.730,
+            "v(s),sc(e),sq(o)" : 0.780,
+            "v(d),sc(c),sq(o)" : 5.640,
+            "v(s),sc(c),sq(o)" : 5.660,
+            "v(d),sc(e),sq(x)" : 6.740,
+            "v(d),sc(c),sq(x)" : 23.54
+        },
+        "se(mc,min)" : {
+            "v(d),sc(c),sq(o)" : 0.720,
+            "v(s),sc(c),sq(o)" : 0.730,
+            "v(d),sc(c),sq(x)" : 0.800,
+            "v(d),sc(e),sq(x)" : 4.940,
+            "v(d),sc(e),sq(o)" : 6.520,
+            "v(s),sc(e),sq(o)" : 6.600
+        },
+        "se(mc,ran)" : {
+            "v(d),sc(e),sq(o)" : 1.010,
+            "v(d),sc(c),sq(o)" : 1.960,
+            "v(s),sc(c),sq(o)" : 4.850,
+            "v(d),sc(e),sq(x)" : 4.910,
+            "v(d),sc(c),sq(x)" : 5.710,
+            "v(s),sc(e),sq(o)" : 6.780
+        },
+        "se(oc,id)" : {
+            "v(d),sc(e),sq(x)" : 3.770,
+            "v(d),sc(c),sq(o)" : 5.620,
+            "v(s),sc(c),sq(o)" : 5.700,
+            "v(d),sc(e),sq(o)" : 6.400,
+            "v(s),sc(e),sq(o)" : 6.410,
+            "v(d),sc(c),sq(x)" : 13.47
+        },
+        "se(oc,max)" : {
+            "v(s),sc(e),sq(o)" : 0.710,
+            "v(d),sc(e),sq(o)" : 0.720,
+            "v(s),sc(c),sq(o)" : 2.260,
+            "v(d),sc(c),sq(o)" : 2.290,
+            "v(d),sc(e),sq(x)" : 5.410,
+            "v(d),sc(c),sq(x)" : 17.78
+        },
+        "se(oc,min)" : {
+            "v(d),sc(e),sq(x)" : 3.970,
+            "v(d),sc(c),sq(o)" : 4.670,
+            "v(s),sc(c),sq(o)" : 4.710,
+            "v(d),sc(e),sq(o)" : 6.340,
+            "v(s),sc(e),sq(o)" : 6.440,
+            "v(d),sc(c),sq(x)" : 1.930
+        },
+        "se(oc,ran)" : {
+            "v(d),sc(e),sq(o)" : 0.710,
+            "v(s),sc(e),sq(o)" : 2.250,
+            "v(d),sc(c),sq(o)" : 3.180,
+            "v(d),sc(c),sq(x)" : 3.380,
+            "v(d),sc(e),sq(x)" : 5.740,
+            "v(s),sc(c),sq(o)" : 7.240
+        },
+        "se(s,id)" : {
+            "v(d),sc(c),sq(o)" : 2.390,
+            "v(s),sc(c),sq(o)" : 2.420,
+            "v(d),sc(e),sq(o)" : 4.920,
+            "v(s),sc(e),sq(o)" : 4.920,
+            "v(d),sc(e),sq(x)" : 7.700,
+            "v(d),sc(c),sq(x)" : 12.23
+        },
+        "se(s,max)" : {
+            "v(d),sc(c),sq(o)" : 2.150,
+            "v(s),sc(c),sq(o)" : 2.150,
+            "v(d),sc(e),sq(o)" : 2.870,
+            "v(s),sc(e),sq(o)" : 2.890,
+            "v(d),sc(e),sq(x)" : 5.170,
+            "v(d),sc(c),sq(x)" : 7.630
+        },
+        "se(s,min)" : {
+            "v(d),sc(c),sq(o)" : 2.240,
+            "v(s),sc(c),sq(o)" : 2.240,
+            "v(d),sc(e),sq(o)" : 4.660,
+            "v(s),sc(e),sq(o)" : 4.680,
+            "v(d),sc(e),sq(x)" : 7.400,
+            "v(d),sc(c),sq(x)" : 1.590
+        },
+        "se(s,ran)" : {
+            "v(d),sc(e),sq(o)" : 0.120,
+            "v(d),sc(c),sq(o)" : 2.270,
+            "v(s),sc(c),sq(o)" : 3.050,
+            "v(d),sc(e),sq(x)" : 3.900,
+            "v(d),sc(c),sq(x)" : 6.390,
+            "v(s),sc(e),sq(o)" : 7.850
+        }
+    },
+    "15" : {
+        "se(ff,id)" : {
+            "v(d),sc(e),sq(x)" : 0.170,
+            "v(d),sc(c),sq(x)" : 0.420,
+            "v(s),sc(e),sq(o)" : 1.770,
+            "v(d),sc(e),sq(o)" : 1.800,
+            "v(d),sc(c),sq(o)" : 1.910,
+            "v(s),sc(c),sq(o)" : 1.930
+        },
+        "se(ff,max)" : {
+            "v(d),sc(e),sq(x)" : 1.100,
+            "v(d),sc(c),sq(x)" : 2.450,
+            "v(d),sc(c),sq(o)" : 6.300,
+            "v(s),sc(c),sq(o)" : 6.380,
+            "v(s),sc(e),sq(o)" : 8.050,
+            "v(d),sc(e),sq(o)" : 8.090
+        },
+        "se(ff,min)" : {
+            "v(d),sc(e),sq(x)" : 0.160,
+            "v(d),sc(c),sq(x)" : 0.410,
+            "v(s),sc(e),sq(o)" : 1.750,
+            "v(d),sc(e),sq(o)" : 1.780,
+            "v(d),sc(c),sq(o)" : 1.920,
+            "v(s),sc(c),sq(o)" : 1.970
+        },
+        "se(ff,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.230,
+            "v(d),sc(c),sq(x)" : 0.560,
+            "v(d),sc(c),sq(o)" : 0.720,
+            "v(s),sc(e),sq(o)" : 1.880,
+            "v(s),sc(c),sq(o)" : 6.760,
+            "v(d),sc(e),sq(o)" : 8.860
+        },
+        "se(io,id)" : {
+            "v(d),sc(e),sq(x)" : 0.130,
+            "v(d),sc(c),sq(x)" : 0.380,
+            "v(d),sc(e),sq(o)" : 1.720,
+            "v(s),sc(e),sq(o)" : 1.720,
+            "v(d),sc(c),sq(o)" : 1.850,
+            "v(s),sc(c),sq(o)" : 1.870
+        },
+        "se(io,max)" : {
+            "v(d),sc(e),sq(x)" : 0.830,
+            "v(d),sc(c),sq(x)" : 2.240,
+            "v(d),sc(c),sq(o)" : 6.130,
+            "v(s),sc(c),sq(o)" : 6.150,
+            "v(s),sc(e),sq(o)" : 7.850,
+            "v(d),sc(e),sq(o)" : 7.870
+        },
+        "se(io,min)" : {
+            "v(d),sc(e),sq(x)" : 0.130,
+            "v(d),sc(c),sq(x)" : 0.370,
+            "v(s),sc(e),sq(o)" : 1.740,
+            "v(d),sc(e),sq(o)" : 1.750,
+            "v(s),sc(c),sq(o)" : 1.880,
+            "v(d),sc(c),sq(o)" : 1.890
+        },
+        "se(io,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.080,
+            "v(d),sc(c),sq(x)" : 0.390,
+            "v(s),sc(c),sq(o)" : 0.590,
+            "v(d),sc(c),sq(o)" : 0.700,
+            "v(s),sc(e),sq(o)" : 7.450,
+            "v(d),sc(e),sq(o)" : 9.010
+        },
+        "se(l,id)" : {
+            "v(d),sc(e),sq(x)" : 0.790,
+            "v(d),sc(c),sq(x)" : 1.720,
+            "v(d),sc(c),sq(o)" : 6.920,
+            "v(s),sc(c),sq(o)" : 7.010,
+            "v(s),sc(e),sq(o)" : 7.960,
+            "v(d),sc(e),sq(o)" : 7.970
+        },
+        "se(l,max)" : {
+            "v(d),sc(e),sq(x)" : 1.330,
+            "v(d),sc(c),sq(x)" : 2.730,
+            "v(d),sc(c),sq(o)" : 4.380,
+            "v(s),sc(c),sq(o)" : 4.480,
+            "v(s),sc(e),sq(o)" : 5.590,
+            "v(d),sc(e),sq(o)" : 5.680
+        },
+        "se(l,min)" : {
+            "v(d),sc(e),sq(x)" : 0.760,
+            "v(d),sc(c),sq(x)" : 1.550,
+            "v(d),sc(c),sq(o)" : 6.120,
+            "v(s),sc(c),sq(o)" : 6.150,
+            "v(d),sc(e),sq(o)" : 6.960,
+            "v(s),sc(e),sq(o)" : 6.960
+        },
+        "se(l,ran)" : {
+            "v(d),sc(e),sq(x)" : 1.410,
+            "v(s),sc(c),sq(o)" : 2.470,
+            "v(d),sc(c),sq(o)" : 3.910,
+            "v(d),sc(c),sq(x)" : 4.640,
+            "v(d),sc(e),sq(o)" : 1.610,
+            "v(s),sc(e),sq(o)" : 1.770
+        },
+        "se(mc,id)" : {
+            "v(d),sc(e),sq(x)" : 0.230,
+            "v(d),sc(c),sq(x)" : 0.460,
+            "v(d),sc(c),sq(o)" : 1.720,
+            "v(s),sc(c),sq(o)" : 1.740,
+            "v(s),sc(e),sq(o)" : 1.800,
+            "v(d),sc(e),sq(o)" : 1.890
+        },
+        "se(mc,max)" : {
+            "v(d),sc(e),sq(x)" : 1.610,
+            "v(d),sc(c),sq(x)" : 6.140,
+            "v(d),sc(e),sq(o)" : 8.310,
+            "v(s),sc(e),sq(o)" : 8.320,
+            "v(d),sc(c),sq(o)" : 13.82,
+            "v(s),sc(c),sq(o)" : 14.30
+        },
+        "se(mc,min)" : {
+            "v(d),sc(e),sq(x)" : 0.240,
+            "v(d),sc(c),sq(x)" : 0.470,
+            "v(d),sc(c),sq(o)" : 1.700,
+            "v(s),sc(c),sq(o)" : 1.750,
+            "v(s),sc(e),sq(o)" : 1.830,
+            "v(d),sc(e),sq(o)" : 1.900
+        },
+        "se(mc,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.310,
+            "v(s),sc(e),sq(o)" : 2.020,
+            "v(d),sc(c),sq(x)" : 3.580,
+            "v(d),sc(e),sq(o)" : 9.490,
+            "v(s),sc(c),sq(o)" : 14.93,
+            "v(d),sc(c),sq(o)" : 14.94
+        },
+        "se(oc,id)" : {
+            "v(d),sc(e),sq(x)" : 0.180,
+            "v(s),sc(e),sq(o)" : 1.770,
+            "v(d),sc(e),sq(o)" : 1.800,
+            "v(d),sc(c),sq(x)" : 2.040,
+            "v(d),sc(c),sq(o)" : 8.310,
+            "v(s),sc(c),sq(o)" : 8.470
+        },
+        "se(oc,max)" : {
+            "v(d),sc(e),sq(x)" : 1.320,
+            "v(d),sc(c),sq(x)" : 2.720,
+            "v(d),sc(c),sq(o)" : 5.480,
+            "v(s),sc(c),sq(o)" : 5.630,
+            "v(d),sc(e),sq(o)" : 8.150,
+            "v(s),sc(e),sq(o)" : 8.150
+        },
+        "se(oc,min)" : {
+            "v(d),sc(e),sq(x)" : 0.200,
+            "v(d),sc(c),sq(x)" : 1.780,
+            "v(s),sc(e),sq(o)" : 1.780,
+            "v(d),sc(e),sq(o)" : 1.790,
+            "v(d),sc(c),sq(o)" : 6.960,
+            "v(s),sc(c),sq(o)" : 7.110
+        },
+        "se(oc,ran)" : {
+            "v(d),sc(e),sq(x)" : 0.120,
+            "v(d),sc(e),sq(o)" : 0.600,
+            "v(s),sc(e),sq(o)" : 2.360,
+            "v(d),sc(c),sq(x)" : 3.490,
+            "v(s),sc(c),sq(o)" : 8.600,
+            "v(d),sc(c),sq(o)" : 12.35
+        },
+        "se(s,id)" : {
+            "v(d),sc(e),sq(x)" : 0.140,
+            "v(d),sc(c),sq(x)" : 0.250,
+            "v(d),sc(e),sq(o)" : 0.930,
+            "v(s),sc(e),sq(o)" : 0.930,
+            "v(d),sc(c),sq(o)" : 1.020,
+            "v(s),sc(c),sq(o)" : 1.020
+        },
+        "se(s,max)" : {
+            "v(d),sc(e),sq(x)" : 1.440,
+            "v(d),sc(c),sq(x)" : 3.130,
+            "v(d),sc(c),sq(o)" : 7.250,
+            "v(s),sc(c),sq(o)" : 7.430,
+            "v(d),sc(e),sq(o)" : 8.800,
+            "v(s),sc(e),sq(o)" : 8.800
+        },
+        "se(s,min)" : {
+            "v(d),sc(e),sq(x)" : 0.140,
+            "v(d),sc(c),sq(x)" : 0.250,
+            "v(d),sc(e),sq(o)" : 0.820,
+            "v(s),sc(e),sq(o)" : 0.820,
+            "v(d),sc(c),sq(o)" : 0.900,
+            "v(s),sc(c),sq(o)" : 0.920
+        },
+        "se(s,ran)" : {
+            "v(s),sc(c),sq(o)" : 0.620,
+            "v(d),sc(e),sq(x)" : 1.440,
+            "v(s),sc(e),sq(o)" : 3.000,
+            "v(d),sc(c),sq(x)" : 3.640,
+            "v(d),sc(c),sq(o)" : 7.510,
+            "v(d),sc(e),sq(o)" : 9.840
+        }
+    }
+}
