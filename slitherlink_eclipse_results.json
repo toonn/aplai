@@ -1,42 +1,42 @@
 {
     "titles" : {
-        "1" : "24/7 Size 10",
-        "2" : "24/7 Size 5",
-        "a1" : "a10 puzzle",
-        "b1" : "b10 puzzle",
+        "1" : "24/07 Size 10",
+        "2" : "24/07 Size 5",
+        "a10" : "a10 puzzle",
+        "b10" : "b10 puzzle",
         "61" : "janko 61 puzzle",
         "62" : "janko 62 puzzle",
         "63" : "janko 63 puzzle",
         "861" : "janko 861 puzzle",
-        "13" : "janko 103 puzzle",
-        "15" : "janko 105 puzzle"
+        "103" : "janko 103 puzzle",
+        "105" : "janko 105 puzzle"
     },
     "xlabels" : {
         "1" : "Configuration",
         "2" : "Configuration",
-        "a1" : "Configuration",
-        "b1" : "Configuration",
+        "a10" : "Configuration",
+        "b10" : "Configuration",
         "61" : "Configuration",
         "62" : "Configuration",
         "63" : "Configuration",
         "861" : "Configuration",
-        "13" : "Configuration",
-        "15" : "Configuration"
+        "103" : "Configuration",
+        "105" : "Configuration"
     },
     "ylabels" : {
         "1" : "Time",
         "2" : "Time",
-        "a1" : "Time",
-        "b1" : "Time",
+        "a10" : "Time",
+        "b10" : "Time",
         "61" : "Time",
         "62" : "Time",
         "63" : "Time",
         "861" : "Time",
-        "13" : "Time",
-        "15" : "Time"
+        "103" : "Time",
+        "105" : "Time"
     },
     "1" : {
-        "a1" : {
+        "a10" : {
             "v(d),sc(e),sq(x)" : 0.090,
             "v(d),sc(c),sq(x)" : 0.360,
             "v(s),sc(e),sq(o)" : 0.380,
@@ -44,7 +44,7 @@
             "v(d),sc(c),sq(o)" : 0.920,
             "v(s),sc(c),sq(o)" : 0.930
         },
-        "b1" : {
+        "b10" : {
             "v(d),sc(c),sq(o)" : 1.190,
             "v(s),sc(c),sq(o)" : 1.250,
             "v(d),sc(e),sq(x)" : 1.320,
@@ -84,7 +84,7 @@
             "v(d),sc(c),sq(o)" : 5.140,
             "v(s),sc(c),sq(o)" : 5.170
         },
-        "13" : {
+        "103" : {
             "v(d),sc(e),sq(o)" : 0.660,
             "v(s),sc(e),sq(o)" : 0.660,
             "v(d),sc(c),sq(o)" : 5.020,
@@ -92,7 +92,7 @@
             "v(d),sc(e),sq(x)" : 6.320,
             "v(d),sc(c),sq(x)" : 21.33
         },
-        "15" : {
+        "105" : {
             "v(d),sc(e),sq(x)" : 1.490,
             "v(d),sc(c),sq(x)" : 5.540,
             "v(s),sc(e),sq(o)" : 7.490,
@@ -151,7 +151,7 @@
             "v(s),sc(c),sq(o)" : 0.050
         }
     },
-    "a1" : {
+    "a10" : {
         "se(ff,id)" : {
             "v(d),sc(e),sq(x)" : 0.020,
             "v(d),sc(c),sq(x)" : 0.030,
@@ -345,14 +345,14 @@
             "v(s),sc(c),sq(o)" : 0.670
         }
     },
-    "b1" : {
+    "b10" : {
         "se(ff,id)" : {
             "v(d),sc(e),sq(x)" : 1.910,
             "v(d),sc(c),sq(x)" : 3.980,
             "v(s),sc(c),sq(o)" : 8.260,
             "v(d),sc(c),sq(o)" : 8.300,
-            "v(d),sc(e),sq(o)" : 1.340,
-            "v(s),sc(e),sq(o)" : 1.360
+            "v(d),sc(e),sq(o)" : 10.340,
+            "v(s),sc(e),sq(o)" : 10.360
         },
         "se(ff,max)" : {
             "v(s),sc(c),sq(o)" : 0.520,
@@ -367,8 +367,8 @@
             "v(d),sc(c),sq(x)" : 4.080,
             "v(s),sc(c),sq(o)" : 8.300,
             "v(d),sc(c),sq(o)" : 8.480,
-            "v(d),sc(e),sq(o)" : 1.310,
-            "v(s),sc(e),sq(o)" : 1.350
+            "v(d),sc(e),sq(o)" : 10.310,
+            "v(s),sc(e),sq(o)" : 10.350
         },
         "se(ff,ran)" : {
             "v(d),sc(c),sq(o)" : 1.220,
@@ -383,8 +383,8 @@
             "v(d),sc(c),sq(x)" : 3.500,
             "v(s),sc(c),sq(o)" : 8.290,
             "v(d),sc(c),sq(o)" : 8.360,
-            "v(d),sc(e),sq(o)" : 1.120,
-            "v(s),sc(e),sq(o)" : 1.200
+            "v(d),sc(e),sq(o)" : 10.120,
+            "v(s),sc(e),sq(o)" : 10.200
         },
         "se(io,max)" : {
             "v(d),sc(c),sq(o)" : 0.520,
@@ -399,8 +399,8 @@
             "v(d),sc(c),sq(x)" : 3.580,
             "v(d),sc(c),sq(o)" : 8.230,
             "v(s),sc(c),sq(o)" : 8.330,
-            "v(d),sc(e),sq(o)" : 1.110,
-            "v(s),sc(e),sq(o)" : 1.220
+            "v(d),sc(e),sq(o)" : 10.110,
+            "v(s),sc(e),sq(o)" : 10.220
         },
         "se(io,ran)" : {
             "v(d),sc(c),sq(x)" : 1.160,
@@ -429,9 +429,9 @@
         "se(l,min)" : {
             "v(d),sc(e),sq(x)" : 4.290,
             "v(d),sc(c),sq(x)" : 7.960,
-            "v(d),sc(c),sq(o)" : 1.920,
+            "v(d),sc(c),sq(o)" : 10.920,
             "v(s),sc(c),sq(o)" : 11.50,
-            "v(s),sc(e),sq(o)" : 2.890,
+            "v(s),sc(e),sq(o)" : 20.890,
             "v(d),sc(e),sq(o)" : 22.39
         },
         "se(l,ran)" : {
@@ -447,7 +447,7 @@
             "v(d),sc(c),sq(x)" : 3.380,
             "v(d),sc(c),sq(o)" : 8.020,
             "v(s),sc(c),sq(o)" : 8.080,
-            "v(s),sc(e),sq(o)" : 1.820,
+            "v(s),sc(e),sq(o)" : 10.820,
             "v(d),sc(e),sq(o)" : 11.78
         },
         "se(mc,max)" : {
@@ -476,8 +476,8 @@
         },
         "se(oc,id)" : {
             "v(d),sc(e),sq(x)" : 2.540,
-            "v(d),sc(c),sq(x)" : 1.010,
-            "v(s),sc(e),sq(o)" : 1.400,
+            "v(d),sc(c),sq(x)" : 10.010,
+            "v(s),sc(e),sq(o)" : 10.400,
             "v(d),sc(e),sq(o)" : 12.19,
             "v(d),sc(c),sq(o)" : 15.70,
             "v(s),sc(c),sq(o)" : 15.80
@@ -493,7 +493,7 @@
         "se(oc,min)" : {
             "v(d),sc(e),sq(x)" : 2.710,
             "v(d),sc(c),sq(x)" : 8.420,
-            "v(s),sc(e),sq(o)" : 1.610,
+            "v(s),sc(e),sq(o)" : 10.610,
             "v(s),sc(c),sq(o)" : 12.15,
             "v(d),sc(c),sq(o)" : 12.16,
             "v(d),sc(e),sq(o)" : 12.20
@@ -535,7 +535,7 @@
             "v(d),sc(c),sq(o)" : 2.080,
             "v(d),sc(c),sq(x)" : 2.620,
             "v(s),sc(c),sq(o)" : 7.030,
-            "v(s),sc(e),sq(o)" : 1.710,
+            "v(s),sc(e),sq(o)" : 10.710,
             "v(d),sc(e),sq(o)" : 14.10
         }
     },
@@ -1315,7 +1315,7 @@
             "v(s),sc(c),sq(o)" : 1.310
         }
     },
-    "13" : {
+    "103" : {
         "se(ff,id)" : {
             "v(d),sc(e),sq(x)" : 2.980,
             "v(d),sc(c),sq(o)" : 3.160,
@@ -1385,8 +1385,8 @@
             "v(s),sc(c),sq(o)" : 4.320,
             "v(d),sc(e),sq(x)" : 5.320,
             "v(d),sc(c),sq(x)" : 8.910,
-            "v(d),sc(e),sq(o)" : 1.240,
-            "v(s),sc(e),sq(o)" : 1.310
+            "v(d),sc(e),sq(o)" : 10.240,
+            "v(s),sc(e),sq(o)" : 10.310
         },
         "se(l,max)" : {
             "v(d),sc(e),sq(o)" : 2.100,
@@ -1466,7 +1466,7 @@
             "v(s),sc(c),sq(o)" : 4.710,
             "v(d),sc(e),sq(o)" : 6.340,
             "v(s),sc(e),sq(o)" : 6.440,
-            "v(d),sc(c),sq(x)" : 1.930
+            "v(d),sc(c),sq(x)" : 10.930
         },
         "se(oc,ran)" : {
             "v(d),sc(e),sq(o)" : 0.710,
@@ -1498,7 +1498,7 @@
             "v(d),sc(e),sq(o)" : 4.660,
             "v(s),sc(e),sq(o)" : 4.680,
             "v(d),sc(e),sq(x)" : 7.400,
-            "v(d),sc(c),sq(x)" : 1.590
+            "v(d),sc(c),sq(x)" : 10.590
         },
         "se(s,ran)" : {
             "v(d),sc(e),sq(o)" : 0.120,
@@ -1509,7 +1509,7 @@
             "v(s),sc(e),sq(o)" : 7.850
         }
     },
-    "15" : {
+    "105" : {
         "se(ff,id)" : {
             "v(d),sc(e),sq(x)" : 0.170,
             "v(d),sc(c),sq(x)" : 0.420,
@@ -1603,8 +1603,8 @@
             "v(s),sc(c),sq(o)" : 2.470,
             "v(d),sc(c),sq(o)" : 3.910,
             "v(d),sc(c),sq(x)" : 4.640,
-            "v(d),sc(e),sq(o)" : 1.610,
-            "v(s),sc(e),sq(o)" : 1.770
+            "v(d),sc(e),sq(o)" : 10.610,
+            "v(s),sc(e),sq(o)" : 10.770
         },
         "se(mc,id)" : {
             "v(d),sc(e),sq(x)" : 0.230,
