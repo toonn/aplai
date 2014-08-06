@@ -1,4 +1,4 @@
-:- module(sudoku_chr_ovp, [solve/1, solveall/0]).
+:- module(chr_ovp, [solve/1, solveall/0]).
 :- use_module(library(chr)).
 :- chr_option(debug, off). % on - off
 :- chr_option(optimize, full). % full - off
@@ -17,7 +17,6 @@
 :- chr_constraint cell(+pos, +val).
 :- chr_constraint search(+natural). 
 :- chr_constraint propagate, convert, cleanup.
-:- chr_constraint failcheck(+pos, +list(pos)).
 
 :- consult('sudex_toledo.pl').
 
@@ -189,21 +188,17 @@ fill_essential(V, EPos, Fs) :-
 
 % Alternative viewpoint
 
-fail_when_two_sets_require_same_position @ failcheck(V1, [V2 | _]),
-    val_set(V1, Pos1), val_set(V2, Pos2)
-    <=> V1 \= V2, essential_pos(Pos1, EPos1), essential_pos(Pos2, EPos2),
-        intersection(EPos1, EPos2, Intersection), Intersection \= []
-        | fail.
-failcheck(V1, [_ | Vs]) <=> failcheck(V1, Vs).
+%fail_when_two_sets_require_same_position @ val_set(V1, Pos1), val_set(V2, Pos2)
+%    <=> V1 \= V2, essential_pos(Pos1, EPos1), essential_pos(Pos2, EPos2),
+%        intersection(EPos1, EPos2, Intersection), Intersection \= []
+%        | fail.
 
 
 remove(_, []) <=> true.
 remove_single_from_other @ remove(Psingle, [V | Vs]),
     val_set(V, Pos) # passive
-    <=> (select(Psingle, Pos, NPos) ; Pos = NPos),
-        select(V, [1,2,3,4,5,6,7,8,9], Vcs),
-        subtract(Vcs, Vs, Vchecks)
-        | val_set(V, NPos), remove(Psingle, Vs), failcheck(V, Vchecks).
+    <=> (select(Psingle, Pos, NPos) ; Pos = NPos)
+        | val_set(V, NPos), remove(Psingle, Vs).
 fill_single @ propagate \ single(V, Psingle),
     filled(Fs), val_set(V, Pos)
     <=> exclude(influence(Psingle), Pos, NPos),
@@ -219,6 +214,9 @@ first_fail @ val_set(V, Pos) # passive, filled(Fs) # passive \ search(N)
     <=> essential_pos(Pos, EPos), length(EPos, N)
         | fill_essential(V, EPos, Fs).
 
+fail_if_search_finished_but_set_not_9 @ search(0), val_set(_, Pos)
+    <=> length(Pos, L), L \= 9
+        | fail.
 search(0) <=> true.
 search(N) <=> NN is N - 1, search(NN).
 
