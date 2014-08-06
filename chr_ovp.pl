@@ -17,6 +17,7 @@
 :- chr_constraint cell(+pos, +val).
 :- chr_constraint search(+natural). 
 :- chr_constraint propagate, convert, cleanup.
+:- chr_constraint failcheck(+pos, +list(pos)).
 
 :- consult('sudex_toledo.pl').
 
@@ -176,6 +177,7 @@ essential_pos(Pos, EPos) :-
 fill_essential_(_, [], _).
 fill_essential_(V, [EP | EPos], Fs) :-
     member(EP, Fs),
+    !,
     fill_essential_(V, EPos, Fs).
 fill_essential_(V, [EP | EPos], Fs) :-
     single(V, EP),
@@ -187,17 +189,21 @@ fill_essential(V, EPos, Fs) :-
 
 % Alternative viewpoint
 
-fail_when_two_sets_require_same_position @ val_set(V1, Pos1), val_set(V2, Pos2)
+fail_when_two_sets_require_same_position @ failcheck(V1, [V2 | _]),
+    val_set(V1, Pos1), val_set(V2, Pos2)
     <=> V1 \= V2, essential_pos(Pos1, EPos1), essential_pos(Pos2, EPos2),
-        intersection(EPos1, EPos2, Intersection), \+ length(Intersection, 0)
+        intersection(EPos1, EPos2, Intersection), Intersection \= []
         | fail.
+failcheck(V1, [_ | Vs]) <=> failcheck(V1, Vs).
 
 
 remove(_, []) <=> true.
 remove_single_from_other @ remove(Psingle, [V | Vs]),
-    val_set(V, Pos)
-    <=> (select(Psingle, Pos, NPos) ; Pos = NPos)
-        | val_set(V, NPos), remove(Psingle, Vs).
+    val_set(V, Pos) # passive
+    <=> (select(Psingle, Pos, NPos) ; Pos = NPos),
+        select(V, [1,2,3,4,5,6,7,8,9], Vcs),
+        subtract(Vcs, Vs, Vchecks)
+        | val_set(V, NPos), remove(Psingle, Vs), failcheck(V, Vchecks).
 fill_single @ propagate \ single(V, Psingle),
     filled(Fs), val_set(V, Pos)
     <=> exclude(influence(Psingle), Pos, NPos),
