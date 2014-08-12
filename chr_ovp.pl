@@ -1,8 +1,8 @@
 :- module(chr_ovp, [solve/1, solveall/0]).
 :- use_module(library(chr)).
-:- chr_option(debug, off). % on - off
-:- chr_option(optimize, full). % full - off
-:- chr_option(check_guard_bindings, off). % on - off
+:- chr_option(debug, on). % on - off
+:- chr_option(optimize, off). % full - off
+:- chr_option(check_guard_bindings, on). % on - off
 
 :- chr_type list(T) ---> [] ; [T | list(T)].
 :- chr_type row == natural.
