@@ -137,12 +137,12 @@ alldifferent_in_column @ propagate \ rvc(RowA-Val, [Col]), rvc(RowB-Val, [Col]) 
 alldifferent_in_box @ propagate \ rvc(Row-Val, [Col]), rvc(ORow-Val, [OCol]) # passive
     <=> (Row \= ORow ; Col \= OCol), box(Row-Col, ORow-OCol) | false.
 
-same_row_diff_values_eliminate_column @ propagate, cell(Row-ValA, [Col])
-    \ cell(Row-ValB, [C1, C2 | Cs])
+same_row_diff_values_eliminate_column @ propagate, rvc(Row-ValA, [Col])
+    \ rvc(Row-ValB, [C1, C2 | Cs])
     <=> ValA \= ValB, select(Col, [C1, C2 | Cs], NCs)
         | rvc(Row-ValB, NCs).
 same_value_diff_rows_eliminate_Column @ propagate, rvc(RowA-Val, [Col])
-    \ cell(RowB-Val, [C1, C2 | Cs])
+    \ rvc(RowB-Val, [C1, C2 | Cs])
     <=> RowA \= RowB, select(Col, [C1, C2 | Cs], NCs)
         | rvc(RowB-Val, NCs).
 
@@ -158,6 +158,6 @@ search(N) <=> NN is N + 1, search(NN).
 convert \ rvc(Row-Val, [Col]) <=> cell(Row-Col, [Val]), convert.
 convert <=> true.
 
-cleanup \ rvc(_, _) <=> true.
+cleanup \ cell(_, _) <=> true.
 cleanup <=> true.
 
