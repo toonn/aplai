@@ -1,4 +1,4 @@
-:- module(chr_ovp, [solve/1, solveall/0]).
+:- module(sudoku_chr_ovp, [solve/1, solveall/0]).
 :- use_module(library(chr)).
 :- chr_option(debug, on). % on - off
 :- chr_option(optimize, off). % full - off
@@ -8,15 +8,17 @@
 :- chr_type row == natural.
 :- chr_type col == natural.
 :- chr_type pos ---> row-col.
-:- chr_type val ---> [natural | list(natural)].
+:- chr_type val --->  [natural | list(natural)].
+:- chr_type rv ---> natural-natural.
 
-:- chr_constraint single(+natural, +pos).
-:- chr_constraint filled(+list(pos)).
-:- chr_constraint remove(+pos, +list(natural)).
-:- chr_constraint val_set(+natural, +list(pos)).
 :- chr_constraint cell(+pos, +val).
+:- chr_constraint rvc(+rv, +list(natural)).
 :- chr_constraint search(+natural). 
 :- chr_constraint propagate, convert, cleanup.
+
+%foo/1, bar/2, foo(+,?,-list(int)).
+% int, dense_int (can be used as array index), float, number, natural, any
+% chr_type alias == list(list(int)).
 
 :- consult('sudex_toledo.pl').
 
@@ -73,32 +75,25 @@ show_solution_(Row, Col) :-
     (NCol is Col + 1,
     show_solution_(Row, NCol)).
 
+
 solve(Puzzle_name) :-
     puzzles(P, Puzzle_name),
     show(P), nl,
     initial_store(P),
-    !,
-    propagate/*,
+    propagate,
     convert,
     show_solution,
-    cleanup*/.
+    cleanup.
 solveall :-
     puzzles(_, Puzzle_name),
-    time(once(solve(Puzzle_name))),
+    write(Puzzle_name), nl,
+    once(time(solve(Puzzle_name))),
     nl,
     fail.
 solveall.
 
 initial_store(Puzzle) :-
-    initial_sets(9),
-    initial_store_(Puzzle, 1, _),
-    filled([]).
-initial_sets(0) :- !.
-initial_sets(Set) :-
-    all_pos(All),
-    val_set(Set, All),
-    NSet is Set - 1,
-    initial_sets(NSet).
+    initial_store_(Puzzle, 1, _).
 initial_store_([], _, _).
 initial_store_([Row | RPuzzle], RowI, RowO) :-
     initialize_row(Row, RowI, 1, _),
@@ -107,126 +102,62 @@ initial_store_([Row | RPuzzle], RowI, RowO) :-
 initialize_row([], _, _, _).
 initialize_row([Value | RRow], Row, ColI, ColO) :-
     nonvar(Value),
-    single(Value, Row-ColI),
+    rvc(Row-Value, [ColI]),
     ColO is ColI + 1,
     initialize_row(RRow, Row, ColO, _).
-initialize_row([Value | RRow], Row, ColI, ColO) :-
-    var(Value),
+initialize_row([NoVal | RRow], Row, ColI, ColO) :-
+    var(NoVal),
+    rvc(Row-1, [ColI]),
+    rvc(Row-2, [ColI]),
+    rvc(Row-3, [ColI]),
+    rvc(Row-4, [ColI]),
+    rvc(Row-5, [ColI]),
+    rvc(Row-6, [ColI]),
+    rvc(Row-7, [ColI]),
+    rvc(Row-8, [ColI]),
+    rvc(Row-9, [ColI]),
     ColO is ColI + 1,
     initialize_row(RRow, Row, ColO, _).
-
-all_pos(All) :-
-    all_pos_(1,1,All).
-all_pos_(9, 9, [9-9]) :- !.
-all_pos_(I, 9, [I-9 | All]) :-
-    !,
-    II is I + 1,
-    all_pos_(II, 1, All).
-all_pos_(I, J, [I-J | All]) :-
-    JJ is J + 1,
-    all_pos_(I, JJ, All).
 
 box(Row-Col, ORow-OCol) :-
     (Row - 1) // 3 =:= (ORow - 1) // 3,
     (Col - 1) // 3 =:= (OCol - 1) // 3.
 
-influence(Row-_, Row-_).
-influence(_-Col, _-Col).
-influence(P, OP) :-
-    box(P, OP).
-
-mkcells(_, []).
-mkcells(V, [P | Ps]) :-
-    cell(P, [V]),
-    mkcells(V, Ps).
-    
-combination(0, _, []).
-combination(N, [P | Ps], [P | RComb]) :-
-    N > 0,
-    NN is N - 1,
-    combination(NN, Ps, RComb).
-combination(N, [_ | Ps], Combination) :-
-    N > 0,
-    combination(N, Ps, Combination).
-
-non_essential_pos(R-C, Pos) :-
-    combination(3, Pos, [R1-C1, R2-C2, R3-C3]),
-    (R == R1 ; R == R2 ; R == R3),
-    (C == C1 ; C == C2 ; C == C3),
-    (box(R-C, R1-C1) ; box(R-C, R2-C2) ; box(R-C, R3-C3)),
-    !.
-remove_non_essential_pos(Pos, NPos) :-
-    select(RemP, Pos, NPos),
-    non_essential_pos(RemP, NPos).
-
-essential_pos_(_,[],[]).
-essential_pos_(Seen, [ER-EC | UnSeen], [ER-EC | EPos]) :-
-    (\+ ((member(R-_, Seen) ; member(R-_, UnSeen)), ER == R)
-        ;
-        \+ ((member(_-C, Seen) ; member(_-C, UnSeen)), EC == C)
-        ;
-        \+ ((member(P, Seen) ; member(P, UnSeen)), box(ER-EC, P))),
-    !,
-    essential_pos_([ER-EC | Seen], UnSeen, EPos).
-essential_pos_(Seen, [NEP | UnSeen], EPos) :-
-    essential_pos_([NEP | Seen], UnSeen, EPos).
-essential_pos(Pos, EPos) :-
-    essential_pos_([], Pos, EPos).
-
-fill_essential_(_, [], _).
-fill_essential_(V, [EP | EPos], Fs) :-
-    member(EP, Fs),
-    !,
-    fill_essential_(V, EPos, Fs).
-fill_essential_(V, [EP | EPos], Fs) :-
-    single(V, EP),
-    fill_essential_(V, EPos, Fs).
-fill_essential(V, EPos, Fs) :-
-    fill_essential_(V, EPos, Fs),
-    propagate.
-
 
 % Alternative viewpoint
 
-%fail_when_two_sets_require_same_position @ val_set(V1, Pos1), val_set(V2, Pos2)
-%    <=> V1 \= V2, essential_pos(Pos1, EPos1), essential_pos(Pos2, EPos2),
-%        intersection(EPos1, EPos2, Intersection), Intersection \= []
-%        | fail.
+consolidate_rvcs @ rvc(Row-Val, [Col]), rvc(Row-Val, Cols) # passive
+    <=> rvc(Row-Val, [Col | Cols]).
 
 
-remove(_, []) <=> true.
-remove_single_from_other @ remove(Psingle, [V | Vs]),
-    val_set(V, Pos) # passive
-    <=> (select(Psingle, Pos, NPos) ; Pos = NPos)
-        | val_set(V, NPos), remove(Psingle, Vs).
-fill_single @ propagate \ single(V, Psingle),
-    filled(Fs), val_set(V, Pos)
-    <=> exclude(influence(Psingle), Pos, NPos),
-        select(V, [1,2,3,4,5,6,7,8,9], Vs)
-        | filled([Psingle | Fs]), remove(Psingle, Vs),
-            val_set(V, [Psingle | NPos]).
+alldifferent_in_row @ propagate \ rvc(Row-Val, [ColA]), rvc(Row-Val, [ColB]) # passive
+    <=> ColA \= ColB | false.
+alldifferent_in_column @ propagate \ rvc(RowA-Val, [Col]), rvc(RowB-Val, [Col]) # passive
+    <=> RowA \= RowB | false.
+alldifferent_in_box @ propagate \ rvc(Row-Val, [Col]), rvc(ORow-Val, [OCol]) # passive
+    <=> (Row \= ORow ; Col \= OCol), box(Row-Col, ORow-OCol) | false.
+
+same_row_diff_values_eliminate_column @ propagate, cell(Row-ValA, [Col])
+    \ cell(Row-ValB, [C1, C2 | Cs])
+    <=> ValA \= ValB, select(Col, [C1, C2 | Cs], NCs)
+        | rvc(Row-ValB, NCs).
+same_value_diff_rows_eliminate_Column @ propagate, rvc(RowA-Val, [Col])
+    \ cell(RowB-Val, [C1, C2 | Cs])
+    <=> RowA \= RowB, select(Col, [C1, C2 | Cs], NCs)
+        | rvc(RowB-Val, NCs).
 
 
+propagate <=> search(2).
 
-propagate <=> search(8).
+first_fail @ search(N), rvc(Row-Val, Cs) # passive
+<=> length(Cs, N) | member(C, Cs), rvc(Row-Val, [C]), propagate.
 
-first_fail @ val_set(V, Pos) # passive, filled(Fs) # passive \ search(N)
-    <=> essential_pos(Pos, EPos), length(EPos, N)
-        | fill_essential(V, EPos, Fs).
+search(9) <=> true.
+search(N) <=> NN is N + 1, search(NN).
 
-fail_if_search_finished_but_set_not_9 @ search(0), val_set(_, Pos)
-    <=> length(Pos, L), L \= 9
-        | fail.
-search(0) <=> true.
-search(N) <=> NN is N - 1, search(NN).
-
-
-
-set_to_cell_representation @ convert \ val_set(V, Pos)
-    <=> mkcells(V, Pos).
-remove_uncertain_cells @ convert \ cell(P, [V]), cell(P, [H | Vs])
-    <=> cell(P, [V, H | Vs]).
+convert \ rvc(Row-Val, [Col]) <=> cell(Row-Col, [Val]), convert.
 convert <=> true.
-cleanup \ cell(_, _) <=> true.
+
+cleanup \ rvc(_, _) <=> true.
 cleanup <=> true.
 
