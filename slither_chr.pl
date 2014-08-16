@@ -5,20 +5,21 @@
 :- chr_option(check_guard_bindings, on). % on - off
 
 %:- chr_type list(T) ---> [] ; [T | list(T)].
-%:- chr_type row == natural.
-%:- chr_type col == natural.
-%:- chr_type value == natural.
-%:- chr_type pos ---> row-col.
-%:- chr_type val --->  [value | list(value)].
-%:- chr_type rv ---> value-value.
-%
-%:- chr_constraint cell(+pos, +val).
-%:- chr_constraint rvc(+rv, +list(natural)).
+:- chr_type row == natural.
+:- chr_type col == natural.
+:- chr_type fill ---> 0 ; 1.
+:- chr_type edge_degree ---> 0 ; 1 ; 2 ; 3.
+:- chr_type point ---> p(row, col).
+
+:- chr_constraint c(+row, +col, +edge_degree).
+:- chr_constraint h(+row, +col, ?fill).
+:- chr_constraint v(+row, +col, ?fill).
+:- chr_constraint segment(+point, +point).
 %:- chr_constraint search(+natural).
 %:- chr_constraint propagate, cleanup.
 %:- chr_constraint single(+row, +col, +value), remove(+row, +col, +value).
 %
-%:- consult('sudex_toledo.pl').
+:- consult('APLAI_slither_puzzles.ecl').
 
 edge_index(h(R,C),_,N,Index) :- 
     var(Index), !, Index is (R-1)*N + (C-1).
@@ -83,3 +84,190 @@ print_row(R,M,N,Values,Cells) :-
     ;
         true
     ).
+
+slither(NRows, NCols, NumberedCells, Solution) :-
+    mkedges(NRows, NCols),
+    mkcells(NumberedCells),
+    %propagate,
+    %search,
+    show_solution(NumberedCells, NRows, NCols, Solution).
+    %cleanup.
+
+solve(Puzzle) :-
+    puzzle(Puzzle, NRows, NCols, NumberedCells),
+    write(Puzzle), nl,
+    slither(NRows, NCols, NumberedCells, _).
+
+solveall :-
+    puzzle(Puzzle, _, _, _),
+    once(time(solve(Puzzle))),
+    nl,
+    fail.
+solveall.
+
+show_solution(Cells, Rows, Cols, Sol) :-
+    gather_sol(Rows, Cols, Sol),
+    print_solution(Cells, Rows, Cols, Sol).
+
+gather_sol(Rows, Cols, Solution) :-
+    NRows is Rows + 1,
+    NCols is Cols + 1,
+    gather_vs(Rows, NCols, [], VSol),
+    gather_hs(NRows, Cols, VSol, Solution).
+
+gather_vs(0, _, Vs, Vs).
+gather_vs(Rows, Cols, Tail, Vs) :-
+    gather_v_row(Rows, Cols, Tail, NTail),
+    NRows is Rows - 1,
+    gather_vs(NRows, Cols, NTail, Vs).
+
+gather_v_row(_, 0, Vs, Vs).
+gather_v_row(RowIndex, Cols, Tail, Vs) :-
+    find_chr_constraint(v(RowIndex, Cols, F)),
+    NCols is Cols - 1,
+    gather_v_row(RowIndex, NCols, [F | Tail], Vs).
+
+gather_hs(0, _, Hs, Hs).
+gather_hs(Rows, Cols, Tail, Vs) :-
+    gather_h_row(Rows, Cols, Tail, NTail),
+    NRows is Rows - 1,
+    gather_hs(NRows, Cols, NTail, Vs).
+
+gather_h_row(_, 0, Vs, Vs).
+gather_h_row(RowIndex, Cols, Tail, Vs) :-
+    find_chr_constraint(h(RowIndex, Cols, F)),
+    NCols is Cols - 1,
+    gather_h_row(RowIndex, NCols, [F | Tail], Vs).
+
+mkcells([]).
+mkcells([cell(R, C, N) | NumberedCells]) :-
+    c(R, C, N),
+    mkcells(NumberedCells).
+
+mkedges(Rows, Cols) :-
+    NRows is Rows + 1,
+    NCols is Cols + 1,
+    mkhors(NRows, Cols),
+    mkvers(Rows, NCols).
+
+mkhors(0, _) :- !.
+mkhors(Rows, Cols) :-
+    FalseCol is Cols + 1,
+    h(Rows, 0, 0),
+    h(Rows, FalseCol, 0),
+    mkhor(Rows, Cols),
+    NRows is Rows - 1,
+    mkhors(NRows, Cols).
+
+mkhor(_, 0) :- !.
+mkhor(RowIndex, Cols) :-
+    h(RowIndex, Cols, _),
+    NCols is Cols - 1,
+    mkhor(RowIndex, NCols).
+
+mkvers(_, 0) :- !.
+mkvers(Rows, Cols) :-
+    FalseRow is Rows + 1,
+    v(0, Cols, 0),
+    v(FalseRow, Cols, 0),
+    mkver(Rows, Cols),
+    NCols is Cols - 1,
+    mkvers(Rows, NCols).
+
+mkver(0, _) :- !.
+mkver(Rows, ColIndex) :-
+    v(Rows, ColIndex, _),
+    NRows is Rows - 1,
+    mkver(NRows, ColIndex).
+
+% Constraint Handling Rules
+
+% Single Cycle constraint
+create_hor_segment @ h(R, C, 1)
+    ==> NC is C + 1
+        | segment(p(R, C), p(R, NC)).
+create_ver_segment @ v(R, C, 1)
+    ==> NR is R + 1
+        | segment(p(R, C), p(NR, C)).
+merge_segments_1=2 @ segment(A, B), segment(B, C)
+    <=> segment(A, C).
+merge_segments_1=1 @ segment(A, B), segment(A, C)
+    <=> segment(B, C).
+merge_segments_2=2 @ segment(A, B), segment(C, B)
+    <=> segment(A, C).
+
+closed_loop_and_another_segment_fail @ segment(P, P), segment(_, _)
+    <=> fail.
+
+
+% Cell Number constraints
+cell_0_no_filled_edges @ c(R, C, 0), h(R, C, HF1), h(NR, C, HF2),
+    v(R, C, VF1), v(R, NC, VF2)
+    ==> NR is R + 1, NC is C + 1
+        | HF1 = 0, HF2 = 0, VF1 = 0, VF2 = 0.
+
+cell_1_no_filled_edges @ c(R, C, 1), h(R, C, HF1), h(NR, C, HF2),
+    v(R, C, VF1), v(R, NC, VF2)
+    ==> NR is R + 1, NC is C + 1,
+        (nonvar(HF1) ; nonvar(HF2) ; nonvar(VF1) ; nonvar(VF2))
+        | (HF1 = 1, HF2 = 0, VF1 = 0, VF2 = 0
+            ;
+           HF1 = 0, HF2 = 1, VF1 = 0, VF2 = 0
+            ;
+           HF1 = 0, HF2 = 0, VF1 = 1, VF2 = 0
+            ;
+           HF1 = 0, HF2 = 0, VF1 = 0, VF2 = 1).
+
+cell_2_no_filled_edges @ c(R, C, 2), h(R, C, HF1), h(NR, C, HF2),
+    v(R, C, VF1), v(R, NC, VF2)
+    ==> NR is R + 1, NC is C + 1,
+        (nonvar(HF1) ; nonvar(HF2) ; nonvar(VF1) ; nonvar(VF2))
+        | (HF1 = 1, HF2 = 1, VF1 = 0, VF2 = 0
+            ;
+           HF1 = 1, HF2 = 0, VF1 = 1, VF2 = 0
+            ;
+           HF1 = 1, HF2 = 0, VF1 = 0, VF2 = 1
+            ;
+           HF1 = 0, HF2 = 1, VF1 = 1, VF2 = 0
+            ;
+           HF1 = 0, HF2 = 1, VF1 = 0, VF2 = 1
+            ;
+           HF1 = 0, HF2 = 0, VF1 = 1, VF2 = 1).
+
+cell_3_no_filled_edges @ c(R, C, 3), h(R, C, HF1), h(NR, C, HF2),
+    v(R, C, VF1), v(R, NC, VF2)
+    ==> NR is R + 1, NC is C + 1,
+        (nonvar(HF1) ; nonvar(HF2) ; nonvar(VF1) ; nonvar(VF2))
+        | (HF1 = 0, HF2 = 1, VF1 = 1, VF2 = 1
+            ;
+           HF1 = 1, HF2 = 0, VF1 = 1, VF2 = 1
+            ;
+           HF1 = 1, HF2 = 1, VF1 = 0, VF2 = 1
+            ;
+           HF1 = 1, HF2 = 1, VF1 = 1, VF2 = 0).
+
+
+% Degree of every node is either 0 or 2
+degree_0_or_2 @ h(R, C, E), h(R, NC, W),
+    v(R, C, S), v(NR, C, N)
+    ==> NR is R - 1, NC is C - 1,
+        ((nonvar(N) , nonvar(E) , nonvar(S))
+            ;
+        (nonvar(N) , nonvar(E) , nonvar(W))
+            ;
+        (nonvar(N) , nonvar(S) , nonvar(W))
+            ;
+        (nonvar(E) , nonvar(S) , nonvar(W)))
+        | (N = 0, E = 0, S = 0, W = 0
+            ;
+           N = 1, E = 1, S = 0, W = 0
+            ;
+           N = 1, E = 0, S = 1, W = 0
+            ;
+           N = 1, E = 0, S = 0, W = 1
+            ;
+           N = 0, E = 1, S = 1, W = 0
+            ;
+           N = 0, E = 1, S = 0, W = 1
+            ;
+           N = 0, E = 0, S = 1, W = 1).
