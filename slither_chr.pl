@@ -15,7 +15,7 @@
 :- chr_constraint h(+row, +col, ?fill).
 :- chr_constraint v(+row, +col, ?fill).
 :- chr_constraint segment(+point, +point).
-%:- chr_constraint search(+natural).
+:- chr_constraint search.
 %:- chr_constraint propagate, cleanup.
 %:- chr_constraint single(+row, +col, +value), remove(+row, +col, +value).
 %
@@ -89,7 +89,7 @@ slither(NRows, NCols, NumberedCells, Solution) :-
     mkedges(NRows, NCols),
     mkcells(NumberedCells),
     %propagate,
-    %search,
+    search,
     show_solution(NumberedCells, NRows, NCols, Solution).
     %cleanup.
 
@@ -199,17 +199,34 @@ merge_segments_2=2 @ segment(A, B), segment(C, B)
 closed_loop_and_another_segment_fail @ segment(P, P), segment(_, _)
     <=> fail.
 
+segment(P, P), h(_, _, F) ==> var(F) | F = 0.
+segment(P, P), v(_, _, F) ==> var(F) | F = 0.
+
 
 % Cell Number constraints
-cell_0_no_filled_edges @ c(R, C, 0), h(R, C, HF1), h(NR, C, HF2),
-    v(R, C, VF1), v(R, NC, VF2)
-    ==> NR is R + 1, NC is C + 1
+cell_0_no_filled_edges @ h(R, C, HF1), h(NR, C, HF2), v(R, C, VF1),
+    v(R, NC, VF2) \ c(R, C, 0)
+    <=> NR is R + 1, NC is C + 1
         | HF1 = 0, HF2 = 0, VF1 = 0, VF2 = 0.
 
-cell_1_no_filled_edges @ c(R, C, 1), h(R, C, HF1), h(NR, C, HF2),
-    v(R, C, VF1), v(R, NC, VF2)
-    ==> NR is R + 1, NC is C + 1,
-        (nonvar(HF1) ; nonvar(HF2) ; nonvar(VF1) ; nonvar(VF2))
+cell_1_no_filled_edges @ h(R, C, HF1), h(NR, C, HF2),
+    v(R, C, VF1), v(R, NC, VF2) \ c(R, C, 1)
+    <=> NR is R + 1, NC is C + 1,
+        (%nonvar(HF1), HF1 =:= 1
+         %   ;
+         %nonvar(HF2), HF2 =:= 1
+         %   ;
+         %nonvar(VF1), VF1 =:= 1
+         %   ;
+         %nonvar(VF2), VF2 =:= 1
+         %   ;
+        (nonvar(HF1) , nonvar(HF2) , nonvar(VF1))
+            ;
+        (nonvar(HF1) , nonvar(HF2) , nonvar(VF2))
+            ;
+        (nonvar(HF1) , nonvar(VF1) , nonvar(VF2))
+            ;
+        (nonvar(HF2) , nonvar(VF1) , nonvar(VF2)))
         | (HF1 = 1, HF2 = 0, VF1 = 0, VF2 = 0
             ;
            HF1 = 0, HF2 = 1, VF1 = 0, VF2 = 0
@@ -218,10 +235,28 @@ cell_1_no_filled_edges @ c(R, C, 1), h(R, C, HF1), h(NR, C, HF2),
             ;
            HF1 = 0, HF2 = 0, VF1 = 0, VF2 = 1).
 
-cell_2_no_filled_edges @ c(R, C, 2), h(R, C, HF1), h(NR, C, HF2),
-    v(R, C, VF1), v(R, NC, VF2)
-    ==> NR is R + 1, NC is C + 1,
-        (nonvar(HF1) ; nonvar(HF2) ; nonvar(VF1) ; nonvar(VF2))
+cell_2_no_filled_edges @ h(R, C, HF1), h(NR, C, HF2),
+    v(R, C, VF1), v(R, NC, VF2) \ c(R, C, 2)
+    <=> NR is R + 1, NC is C + 1,
+        (%nonvar(HF1), nonvar(HF2), (HF1=:=1, HF2=:=1 ; HF1=:=0, HF2=:=0)
+         %   ;
+         %nonvar(HF1), nonvar(VF1), (HF1=:=1, VF1=:=1 ; HF1=:=0, VF1=:=0)
+         %   ;
+         %nonvar(HF1), nonvar(VF2), (HF1=:=1, VF2=:=1 ; HF1=:=0, VF2=:=0)
+         %   ;
+         %nonvar(HF2), nonvar(VF1), (HF2=:=1, VF1=:=1 ; HF2=:=0, VF1=:=0)
+         %   ;
+         %nonvar(HF2), nonvar(VF2), (HF2=:=1, VF2=:=1 ; HF2=:=0, VF2=:=0)
+         %   ;
+         %nonvar(VF1), nonvar(VF2), (VF1=:=1, VF2=:=1 ; VF1=:=0, VF2=:=0)
+         %   ;
+        (nonvar(HF1) , nonvar(HF2) , nonvar(VF1))
+            ;
+        (nonvar(HF1) , nonvar(HF2) , nonvar(VF2))
+            ;
+        (nonvar(HF1) , nonvar(VF1) , nonvar(VF2))
+            ;
+        (nonvar(HF2) , nonvar(VF1) , nonvar(VF2)))
         | (HF1 = 1, HF2 = 1, VF1 = 0, VF2 = 0
             ;
            HF1 = 1, HF2 = 0, VF1 = 1, VF2 = 0
@@ -234,10 +269,24 @@ cell_2_no_filled_edges @ c(R, C, 2), h(R, C, HF1), h(NR, C, HF2),
             ;
            HF1 = 0, HF2 = 0, VF1 = 1, VF2 = 1).
 
-cell_3_no_filled_edges @ c(R, C, 3), h(R, C, HF1), h(NR, C, HF2),
-    v(R, C, VF1), v(R, NC, VF2)
-    ==> NR is R + 1, NC is C + 1,
-        (nonvar(HF1) ; nonvar(HF2) ; nonvar(VF1) ; nonvar(VF2))
+cell_3_no_filled_edges @ h(R, C, HF1), h(NR, C, HF2),
+    v(R, C, VF1), v(R, NC, VF2) \ c(R, C, 3)
+    <=> NR is R + 1, NC is C + 1,
+        (%nonvar(HF1), HF1 =:= 0
+         %   ;
+         %nonvar(HF2), HF2 =:= 0
+         %   ;
+         %nonvar(VF1), VF1 =:= 0
+         %   ;
+         %nonvar(VF2), VF2 =:= 0
+         %   ;
+        (nonvar(HF1) , nonvar(HF2) , nonvar(VF1))
+            ;
+        (nonvar(HF1) , nonvar(HF2) , nonvar(VF2))
+            ;
+        (nonvar(HF1) , nonvar(VF1) , nonvar(VF2))
+            ;
+        (nonvar(HF2) , nonvar(VF1) , nonvar(VF2)))
         | (HF1 = 0, HF2 = 1, VF1 = 1, VF2 = 1
             ;
            HF1 = 1, HF2 = 0, VF1 = 1, VF2 = 1
@@ -251,13 +300,27 @@ cell_3_no_filled_edges @ c(R, C, 3), h(R, C, HF1), h(NR, C, HF2),
 degree_0_or_2 @ h(R, C, E), h(R, NC, W),
     v(R, C, S), v(NR, C, N)
     ==> NR is R - 1, NC is C - 1,
+        ((nonvar(N), nonvar(E), N =:= 1, E =:= 1
+            ;
+          nonvar(N), nonvar(S), N =:= 1, S =:= 1
+            ;
+          nonvar(N), nonvar(W), N =:= 1, W =:= 1
+            ;
+          nonvar(E), nonvar(S), E =:= 1, S =:= 1
+            ;
+          nonvar(E), nonvar(W), E =:= 1, W =:= 1
+            ;
+          nonvar(S), nonvar(W), S =:= 1, W =:= 1)
+
+            ;
+
         ((nonvar(N) , nonvar(E) , nonvar(S))
             ;
         (nonvar(N) , nonvar(E) , nonvar(W))
             ;
         (nonvar(N) , nonvar(S) , nonvar(W))
             ;
-        (nonvar(E) , nonvar(S) , nonvar(W)))
+        (nonvar(E) , nonvar(S) , nonvar(W))))
         | (N = 0, E = 0, S = 0, W = 0
             ;
            N = 1, E = 1, S = 0, W = 0
@@ -271,3 +334,29 @@ degree_0_or_2 @ h(R, C, E), h(R, NC, W),
            N = 0, E = 1, S = 0, W = 1
             ;
            N = 0, E = 0, S = 1, W = 1).
+
+% Depth First Search
+depth_first @ search, segment(_, p(R, C)), h(R, C, E), h(R, NC, W), v(R, C, S),
+    v(NR, C, N)
+    ==> NR is R - 1, NC is C - 1
+        | (N = 1, E = 1, S = 0, W = 0
+            ;
+           N = 1, E = 0, S = 1, W = 0
+            ;
+           N = 1, E = 0, S = 0, W = 1
+            ;
+           N = 0, E = 1, S = 1, W = 0
+            ;
+           N = 0, E = 1, S = 0, W = 1
+            ;
+           N = 0, E = 0, S = 1, W = 1).
+
+search, c(R, C, _), h(R, C, HF1), h(NR, C, HF2), v(R, C, VF1), v(R, NC, VF2)
+    ==> NR is R + 1, NC is C + 1
+        | (var(HF1), HF1 = 1
+            ;
+           var(HF2), HF2 = 1
+            ;
+           var(VF1), VF1 = 1
+            ;
+           var(VF2), VF2 = 1).
