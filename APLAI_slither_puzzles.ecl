@@ -96,16 +96,16 @@ puzzle(a3,3,3,[cell(1,1,2),cell(1,3,2),cell(2,2,0),cell(3,1,2),cell(3,3,2)]).
 puzzle(b3,3,3,[cell(1,1,2),cell(1,3,2),cell(3,1,2),cell(3,3,2)]).
 
 % Own puzzles
-puzzle(janko5,5,5,CL) :-
-    member(Name,[janko5a,janko5b,janko5c,janko5d,janko5e]),
-    write(Name),nl,
-    puzzle(Name,5,5,CL).
+%puzzle(janko5,5,5,CL) :-
+%    member(Name,[janko5b,janko5c,janko5d,janko5e]),
+%    write(Name),nl,
+%    puzzle(Name,5,5,CL).
 
-puzzle(janko10,Size,Size,List) :-
-    convertjanko(Number,10,puzzle(_,_,_,List)),
-    write(Number),nl.
-puzzle(Number,Size,Size,List) :-
-    convertjanko(Number,Size,puzzle(_,_,_,List)).
+%puzzle(janko10,Size,Size,List) :-
+%    convertjanko(Number,10,puzzle(_,_,_,List)),
+%    write(Number),nl.
+%puzzle(Number,Size,Size,List) :-
+%    convertjanko(Number,Size,puzzle(_,_,_,List)).
 
 
 puzzle(janko5b,5,5,[cell(1,3,2),cell(1,4,2),cell(2,1,3),cell(2,3,2),cell(2,4,1),cell(4,4,3),cell(4,5,1),cell(5,1,0),cell(5,2,2),cell(5,4,2),cell(5,5,3)]).
@@ -121,25 +121,25 @@ puzzle(janko5e,5,5,[cell(1,2,1),cell(1,5,0),cell(2,1,1),cell(2,5,1),cell(3,1,1),
 cell(3,3,3),cell(4,1,2),cell(4,2,2),cell(4,4,2),cell(5,2,2),cell(5,3,2),
 cell(5,4,3)]).
 
-puzzle(janko12a,12,12,[cell(1,2,3),cell(1,3,3),cell(1,4,3),cell(1,5,1),
-cell(1,7,3),cell(1,8,1),cell(1,10,2),cell(1,12,1),cell(2,2,0),cell(2,6,2),
-cell(2,10,0),cell(2,12,2),cell(3,1,3),cell(3,8,0),cell(3,12,3),cell(4,1,3),
-cell(4,3,0),cell(4,5,3),cell(4,7,3),cell(4,10,2),cell(4,11,3),cell(4,12,2),
-cell(5,1,1),cell(5,9,1),cell(5,10,1),cell(6,4,1),cell(6,5,1),cell(6,12,2),
-cell(7,1,2),cell(7,8,3),cell(7,9,3),cell(8,3,0),cell(8,4,3),cell(8,12,2),
-cell(9,1,2),cell(9,2,0),cell(9,3,2),cell(9,6,2),cell(9,8,2),cell(9,10,2),
-cell(9,12,1),cell(10,1,3),cell(10,5,2),cell(10,12,2),cell(11,1,2),cell(11,3,0),
-cell(11,7,2),cell(11,11,2),cell(12,1,1),cell(12,3,2),cell(12,5,1),cell(12,6,2),
-cell(12,8,2),cell(12,9,1),cell(12,10,3),cell(12,11,2)]).
-
-puzzle(janko12b,12,12,[cell(1,2,1),cell(1,4,3),cell(1,6,3),cell(1,7,3),
-cell(1,8,2),cell(1,9,3),cell(1,10,3),cell(1,12,1),cell(2,3,2),cell(2,12,1),cell(3,1,3),cell(3,4,2),cell(3,7,2),cell(3,10,3),cell(4,1,3),cell(4,6,3),
-cell(4,10,3),cell(4,11,2),cell(5,1,1),cell(5,4,3),cell(5,6,2),cell(5,9,2),
-cell(5,10,2),cell(6,1,2),cell(6,3,2),cell(7,10,1),cell(7,12,3),cell(8,3,3),
-cell(8,4,2),cell(8,7,3),cell(8,9,3),cell(8,12,1),cell(9,2,3),cell(9,3,2),
-cell(9,8,0),cell(9,12,0),cell(10,3,2),cell(10,6,3),cell(10,9,3),cell(10,12,2),
-cell(11,1,1),cell(11,10,3),cell(12,1,2),cell(12,3,3),cell(12,4,1),cell(12,5,2),
-cell(12,6,3),cell(12,7,2),cell(12,9,2),cell(12,11,1)]).
+%puzzle(janko12a,12,12,[cell(1,2,3),cell(1,3,3),cell(1,4,3),cell(1,5,1),
+%cell(1,7,3),cell(1,8,1),cell(1,10,2),cell(1,12,1),cell(2,2,0),cell(2,6,2),
+%cell(2,10,0),cell(2,12,2),cell(3,1,3),cell(3,8,0),cell(3,12,3),cell(4,1,3),
+%cell(4,3,0),cell(4,5,3),cell(4,7,3),cell(4,10,2),cell(4,11,3),cell(4,12,2),
+%cell(5,1,1),cell(5,9,1),cell(5,10,1),cell(6,4,1),cell(6,5,1),cell(6,12,2),
+%cell(7,1,2),cell(7,8,3),cell(7,9,3),cell(8,3,0),cell(8,4,3),cell(8,12,2),
+%cell(9,1,2),cell(9,2,0),cell(9,3,2),cell(9,6,2),cell(9,8,2),cell(9,10,2),
+%cell(9,12,1),cell(10,1,3),cell(10,5,2),cell(10,12,2),cell(11,1,2),cell(11,3,0),
+%cell(11,7,2),cell(11,11,2),cell(12,1,1),cell(12,3,2),cell(12,5,1),cell(12,6,2),
+%cell(12,8,2),cell(12,9,1),cell(12,10,3),cell(12,11,2)]).
+%
+%puzzle(janko12b,12,12,[cell(1,2,1),cell(1,4,3),cell(1,6,3),cell(1,7,3),
+%cell(1,8,2),cell(1,9,3),cell(1,10,3),cell(1,12,1),cell(2,3,2),cell(2,12,1),cell(3,1,3),cell(3,4,2),cell(3,7,2),cell(3,10,3),cell(4,1,3),cell(4,6,3),
+%cell(4,10,3),cell(4,11,2),cell(5,1,1),cell(5,4,3),cell(5,6,2),cell(5,9,2),
+%cell(5,10,2),cell(6,1,2),cell(6,3,2),cell(7,10,1),cell(7,12,3),cell(8,3,3),
+%cell(8,4,2),cell(8,7,3),cell(8,9,3),cell(8,12,1),cell(9,2,3),cell(9,3,2),
+%cell(9,8,0),cell(9,12,0),cell(10,3,2),cell(10,6,3),cell(10,9,3),cell(10,12,2),
+%cell(11,1,1),cell(11,10,3),cell(12,1,2),cell(12,3,3),cell(12,4,1),cell(12,5,2),
+%cell(12,6,3),cell(12,7,2),cell(12,9,2),cell(12,11,1)]).
 
 % Example puzzles
 puzzle(a5,5,5,[cell(1,2,1), cell(2,1,3), cell(2,5,2), cell(3,1,3), cell(3,2,0), cell(3,3,2), cell(3,5,1), cell(4,1,3), cell(4,2,2), cell(4,3,2), cell(5,3,2)]).
