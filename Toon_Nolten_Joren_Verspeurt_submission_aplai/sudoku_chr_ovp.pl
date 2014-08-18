@@ -8,13 +8,17 @@
 :- chr_type row == natural.
 :- chr_type col == natural.
 :- chr_type pos ---> row-col.
-:- chr_type val ---> [natural | list(natural)].
+:- chr_type val --->  [natural | list(natural)].
+:- chr_type rv ---> natural-natural.
 
-:- chr_constraint single(+natural, +pos).
-:- chr_constraint val_set(+natural, +list(pos), +list(pos)).
 :- chr_constraint cell(+pos, +val).
+:- chr_constraint rvc(+rv, +list(natural)).
 :- chr_constraint search(+natural). 
 :- chr_constraint propagate, convert, cleanup.
+
+%foo/1, bar/2, foo(+,?,-list(int)).
+% int, dense_int (can be used as array index), float, number, natural, any
+% chr_type alias == list(list(int)).
 
 :- consult('sudex_toledo.pl').
 
@@ -71,6 +75,7 @@ show_solution_(Row, Col) :-
     (NCol is Col + 1,
     show_solution_(Row, NCol)).
 
+
 solve(Puzzle_name) :-
     puzzles(P, Puzzle_name),
     show(P), nl,
@@ -81,20 +86,14 @@ solve(Puzzle_name) :-
     cleanup.
 solveall :-
     puzzles(_, Puzzle_name),
-    once(solve(Puzzle_name)),
+    write(Puzzle_name), nl,
+    once(time(solve(Puzzle_name))),
     nl,
     fail.
 solveall.
 
 initial_store(Puzzle) :-
-    initial_sets(9),
     initial_store_(Puzzle, 1, _).
-initial_sets(0) :- !.
-initial_sets(Set) :-
-    all_pos(All),
-    val_set(Set, [], All),
-    NSet is Set - 1,
-    initial_sets(NSet).
 initial_store_([], _, _).
 initial_store_([Row | RPuzzle], RowI, RowO) :-
     initialize_row(Row, RowI, 1, _),
@@ -103,72 +102,62 @@ initial_store_([Row | RPuzzle], RowI, RowO) :-
 initialize_row([], _, _, _).
 initialize_row([Value | RRow], Row, ColI, ColO) :-
     nonvar(Value),
-    single(Value, Row-ColI),
+    rvc(Row-Value, [ColI]),
     ColO is ColI + 1,
     initialize_row(RRow, Row, ColO, _).
-initialize_row([Value | RRow], Row, ColI, ColO) :-
-    var(Value),
+initialize_row([NoVal | RRow], Row, ColI, ColO) :-
+    var(NoVal),
+    rvc(Row-1, [ColI]),
+    rvc(Row-2, [ColI]),
+    rvc(Row-3, [ColI]),
+    rvc(Row-4, [ColI]),
+    rvc(Row-5, [ColI]),
+    rvc(Row-6, [ColI]),
+    rvc(Row-7, [ColI]),
+    rvc(Row-8, [ColI]),
+    rvc(Row-9, [ColI]),
     ColO is ColI + 1,
     initialize_row(RRow, Row, ColO, _).
-
-all_pos(All) :-
-    all_pos_(1,1,All).
-all_pos_(9, 9, [9-9]) :- !.
-all_pos_(I, 9, [I-9 | All]) :-
-    !,
-    II is I + 1,
-    all_pos_(II, 1, All).
-all_pos_(I, J, [I-J | All]) :-
-    JJ is J + 1,
-    all_pos_(I, JJ, All).
 
 box(Row-Col, ORow-OCol) :-
     (Row - 1) // 3 =:= (ORow - 1) // 3,
     (Col - 1) // 3 =:= (OCol - 1) // 3.
 
-influence(Row-_, Row-_).
-influence(_-Col, _-Col).
-influence(P, OP) :-
-    box(P, OP).
-
-mkcells(_, []).
-mkcells(V, [P | Ps]) :-
-    cell(P, [V]),
-    mkcells(V, Ps).
-    
-
 
 % Alternative viewpoint
 
-fail_when_no_more_positions @ val_set(_, FPs, Ps)
-    <=> length(FPs, L1), (L1 > 9 ; length(Ps, L2), L1+L2 < 9) | fail.
+consolidate_rvcs @ rvc(Row-Val, [Col]), rvc(Row-Val, Cols) # passive
+    <=> rvc(Row-Val, [Col | Cols]).
 
-finish_set @ val_set(V, FPs, [_|_])
-    <=> length(FPs, 9) | val_set(V, FPs, []).
 
-complete_set_when_just_enough_possible @ propagate, val_set(V, FPs, [P | Ps])
-    ==> length(FPs, L1), length([P | Ps], L2), L1 + L2 =:= 9
-            | single(V, P).
+alldifferent_in_row @ propagate \ rvc(Row-Val, [ColA]), rvc(Row-Val, [ColB]) # passive
+    <=> ColA \= ColB | false.
+alldifferent_in_column @ propagate \ rvc(RowA-Val, [Col]), rvc(RowB-Val, [Col]) # passive
+    <=> RowA \= RowB | false.
+alldifferent_in_box @ propagate \ rvc(Row-Val, [Col]), rvc(ORow-Val, [OCol]) # passive
+    <=> (Row \= ORow ; Col \= OCol), box(Row-Col, ORow-OCol) | false.
 
-remove_possible_position @ single(V, P) \ val_set(OV, OFPs, Ps)
-    <=> V \= OV, select(P, Ps, NPs) | val_set(OV, OFPs, NPs).
+same_row_diff_values_eliminate_column @ propagate, rvc(Row-ValA, [Col])
+    \ rvc(Row-ValB, [C1, C2 | Cs])
+    <=> ValA \= ValB, select(Col, [C1, C2 | Cs], NCs)
+        | rvc(Row-ValB, NCs).
+same_value_diff_rows_eliminate_Column @ propagate, rvc(RowA-Val, [Col])
+    \ rvc(RowB-Val, [C1, C2 | Cs])
+    <=> RowA \= RowB, select(Col, [C1, C2 | Cs], NCs)
+        | rvc(RowB-Val, NCs).
 
-fill_in_position @ single(V, P), val_set(V, FPs, Ps)
-    <=> exclude(influence(P), Ps, NPs), val_set(V, [P | FPs], NPs).
 
-propagate <=> search(1).
+propagate <=> search(2).
 
-first_fail @ val_set(V, _, Ps) # passive \ search(N)
-    <=> length(Ps, N) | member(P, Ps), single(V, P), propagate.
+first_fail @ search(N), rvc(Row-Val, Cs) # passive
+<=> length(Cs, N) | member(C, Cs), rvc(Row-Val, [C]), propagate.
 
-search(81) <=> true.
+search(9) <=> true.
 search(N) <=> NN is N + 1, search(NN).
 
-convert_sets_to_cells_for_printing @ convert \ val_set(V, Ps, _)
-    <=> mkcells(V, Ps).
+convert \ rvc(Row-Val, [Col]) <=> cell(Row-Col, [Val]), convert.
 convert <=> true.
 
-cleanup \ val_set(_, _, _) <=> true.
 cleanup \ cell(_, _) <=> true.
 cleanup <=> true.
 
