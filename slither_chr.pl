@@ -200,6 +200,8 @@ merge_segments_2=2 @ segment(A, B), segment(C, B)
 closed_loop_and_another_segment_fail @ segment(P, P), segment(_, _)
     <=> fail.
 
+segment(P, P), c(_, _, _) <=> fail.
+
 segment(P, P), h(_, _, F) ==> var(F) | F = 0.
 segment(P, P), v(_, _, F) ==> var(F) | F = 0.
 

@@ -1,10 +1,9 @@
 Running the chr programs
 ========================
 
-Start swi-prolog, and load the correct file with the use_module
-command, e.g.:
+Start swi-prolog, and load the correct file, e.g.:
 
-use_module(sudoku_chr_ovp).
+[sudoku_chr_ovp].
 
 Then you can invoke the solve predicate on the name of a sudoku,
 e.g.:
@@ -12,8 +11,15 @@ e.g.:
 solve(expert).
 
 There is also a solveall predicate which runs and times the
-execution of each sudoku automatically. It only makes sense to run this with sudoku_chr, because sudoku_chr_ovp does not work on every
-sudoku and sudoku_chr_channeling does not work at all.
+execution of each sudoku automatically. It only makes sense to run this with sudoku_chr and sudoku_chr_channeling, because sudoku_chr_ovp does not work on every sudoku or is just too slow.
+
+solveall.
+
+For slitherlink it's practically identical:
+
+[slither_chr].
+
+solve(a3).
 
 solveall.
 
