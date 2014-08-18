@@ -29,4 +29,8 @@ Running the ECLiPSe programs
 The sudoku_eclipse_sol.ecl file contains the sudoku solution.
 After loading it into ECLiPSe the solve(Name) predicate will calculate the solution to a single puzzle identified by its name, the solveall predicate runs solve on all puzzles, the experiment predicate calculates solutions to all puzzles with different settings, timing them.
 
-The slitherlink solution doesn't run.
+The slitherlink_eclipse_sol.ecl file contains the sudoku solution.
+The solve(Name) predicate solves a single puzzle and prints the solution.
+The experiment(Size) predicate solves, given a size, a predefined set of puzzles of that size.
+The adaptation I made of the printing helper you gave us has a small problem and so it fails but it does print the full solution.
+Should you wish to change the options with which the experiment is run you should change the arguments given to the slither call.

@@ -7,7 +7,7 @@
 
 solve(Name) :-
     puzzle(Name,NR,NC,Cells),
-    slither(NR,NC,Cells,Sol,[vars(squares),sc(cymemb),squares(on)]),
+    slither(NR,NC,Cells,Sol,[vars(dots),sc(cymemb),squares(off)]),
     \+ print_solution(Cells,NR,NC,Sol),
     nl.
 
@@ -257,7 +257,7 @@ slither(NRows,NCols,LONC,ListOfEdges,Opts) :-
     % Search
     term_variables(Squares, SVars),
     term_variables(Dots, DVars),
-    (memberchk(vars(s),Opts) -> Vars = SVars ; Vars = DVars),
+    (memberchk(vars(squares),Opts) -> Vars = SVars ; Vars = DVars),
     (memberchk(search(Sel,Choice),Opts) -> 
         true 
     ; 

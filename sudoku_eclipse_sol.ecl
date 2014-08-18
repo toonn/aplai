@@ -9,23 +9,34 @@
 % Static stuff
 
 select(S) :-
-    member(S,[input_order,
-              first_fail,
-              smallest,
-              largest,
-              occurrence,
+    member(S,[%input_order,
+              %first_fail,
+              %smallest,
+              %largest,
+              %occurrence,
               most_constrained]).
 choice(Ch) :-
-    member(Ch,[indomain,
-               indomain_min, indomain_max, indomain_middle,
-               indomain_split,indomain_random]).
+    member(Ch,[indomain%,
+               %indomain_min, indomain_max, indomain_middle,
+               %indomain_split,indomain_random
+               ]).
 method(M) :-
     member(M,[complete
         %,bbs(10)
         %,lds(10)
         %,credit(10)
         ]).
-constraints([0,0,1,2,3]).
+% 0: Nothing, 1: row_col(Board) 2: row_col(SquareSets), 
+% 3: occ1(Board), 4: occ1(SquareSets), 5: squares(Blocks)
+constraints(C) :-
+    member(C,[
+        %[1,2,3,0,0],
+        [1,0,3,0,5],
+        [3,0,1,0,5],
+        [1,0,0,0,5],
+        [0,0,3,0,5]
+        %[1,2,3,4,5]
+        ]).
 
 % Top
 
@@ -38,7 +49,7 @@ experiment :-
     constraints(Co),write(Co),write(' '),
     select(S),write(S),write(' '),
     choice(Ch),write(Ch),write(' '),
-    method(M),write(M),write(' '),
+    method(M),write(M),write(' '),nl,
     puzzles(P, Name),write(Name),write(' '),nl,
     time(solution(P,Co,S,Ch,M)),nl,
     fail.
@@ -59,7 +70,7 @@ solution(Problem,Constraints,Selection,Choice,Method) :-
     dim(Blocks,[N,NS,NS]),
     Blocks[1..N,1..NS,1..NS] :: 1..N,
     % Board - Blocks link
-    ( multifor([I,J,K],[1,1,1],[N,NS,NS]), param(Board,Blocks,N,NS) do 
+    ( multifor([I,J,K],[1,1,1],[N,NS,NS]), param(Board,Blocks,NS) do 
         rowsForBox(I,NS,RowB,RowE),
         colsForBox(I,NS,ColB,ColE),
         BoxI is Board[RowB..RowE,ColB..ColE],
