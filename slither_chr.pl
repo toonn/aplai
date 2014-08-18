@@ -100,6 +100,7 @@ solve(Puzzle) :-
 
 solveall :-
     puzzle(Puzzle, _, _, _),
+    Puzzle \= a1,
     once(time(solve(Puzzle))),
     nl,
     fail.
@@ -211,22 +212,7 @@ cell_0_no_filled_edges @ h(R, C, HF1), h(NR, C, HF2), v(R, C, VF1),
 
 cell_1_no_filled_edges @ h(R, C, HF1), h(NR, C, HF2),
     v(R, C, VF1), v(R, NC, VF2) \ c(R, C, 1)
-    <=> NR is R + 1, NC is C + 1,
-        (%nonvar(HF1), HF1 =:= 1
-         %   ;
-         %nonvar(HF2), HF2 =:= 1
-         %   ;
-         %nonvar(VF1), VF1 =:= 1
-         %   ;
-         %nonvar(VF2), VF2 =:= 1
-         %   ;
-        (nonvar(HF1) , nonvar(HF2) , nonvar(VF1))
-            ;
-        (nonvar(HF1) , nonvar(HF2) , nonvar(VF2))
-            ;
-        (nonvar(HF1) , nonvar(VF1) , nonvar(VF2))
-            ;
-        (nonvar(HF2) , nonvar(VF1) , nonvar(VF2)))
+    <=> NR is R + 1, NC is C + 1
         | (HF1 = 1, HF2 = 0, VF1 = 0, VF2 = 0
             ;
            HF1 = 0, HF2 = 1, VF1 = 0, VF2 = 0
@@ -237,26 +223,7 @@ cell_1_no_filled_edges @ h(R, C, HF1), h(NR, C, HF2),
 
 cell_2_no_filled_edges @ h(R, C, HF1), h(NR, C, HF2),
     v(R, C, VF1), v(R, NC, VF2) \ c(R, C, 2)
-    <=> NR is R + 1, NC is C + 1,
-        (%nonvar(HF1), nonvar(HF2), (HF1=:=1, HF2=:=1 ; HF1=:=0, HF2=:=0)
-         %   ;
-         %nonvar(HF1), nonvar(VF1), (HF1=:=1, VF1=:=1 ; HF1=:=0, VF1=:=0)
-         %   ;
-         %nonvar(HF1), nonvar(VF2), (HF1=:=1, VF2=:=1 ; HF1=:=0, VF2=:=0)
-         %   ;
-         %nonvar(HF2), nonvar(VF1), (HF2=:=1, VF1=:=1 ; HF2=:=0, VF1=:=0)
-         %   ;
-         %nonvar(HF2), nonvar(VF2), (HF2=:=1, VF2=:=1 ; HF2=:=0, VF2=:=0)
-         %   ;
-         %nonvar(VF1), nonvar(VF2), (VF1=:=1, VF2=:=1 ; VF1=:=0, VF2=:=0)
-         %   ;
-        (nonvar(HF1) , nonvar(HF2) , nonvar(VF1))
-            ;
-        (nonvar(HF1) , nonvar(HF2) , nonvar(VF2))
-            ;
-        (nonvar(HF1) , nonvar(VF1) , nonvar(VF2))
-            ;
-        (nonvar(HF2) , nonvar(VF1) , nonvar(VF2)))
+    <=> NR is R + 1, NC is C + 1
         | (HF1 = 1, HF2 = 1, VF1 = 0, VF2 = 0
             ;
            HF1 = 1, HF2 = 0, VF1 = 1, VF2 = 0
@@ -271,22 +238,7 @@ cell_2_no_filled_edges @ h(R, C, HF1), h(NR, C, HF2),
 
 cell_3_no_filled_edges @ h(R, C, HF1), h(NR, C, HF2),
     v(R, C, VF1), v(R, NC, VF2) \ c(R, C, 3)
-    <=> NR is R + 1, NC is C + 1,
-        (%nonvar(HF1), HF1 =:= 0
-         %   ;
-         %nonvar(HF2), HF2 =:= 0
-         %   ;
-         %nonvar(VF1), VF1 =:= 0
-         %   ;
-         %nonvar(VF2), VF2 =:= 0
-         %   ;
-        (nonvar(HF1) , nonvar(HF2) , nonvar(VF1))
-            ;
-        (nonvar(HF1) , nonvar(HF2) , nonvar(VF2))
-            ;
-        (nonvar(HF1) , nonvar(VF1) , nonvar(VF2))
-            ;
-        (nonvar(HF2) , nonvar(VF1) , nonvar(VF2)))
+    <=> NR is R + 1, NC is C + 1
         | (HF1 = 0, HF2 = 1, VF1 = 1, VF2 = 1
             ;
            HF1 = 1, HF2 = 0, VF1 = 1, VF2 = 1
@@ -350,13 +302,3 @@ depth_first @ search, segment(_, p(R, C)), h(R, C, E), h(R, NC, W), v(R, C, S),
            N = 0, E = 1, S = 0, W = 1
             ;
            N = 0, E = 0, S = 1, W = 1).
-
-search, c(R, C, _), h(R, C, HF1), h(NR, C, HF2), v(R, C, VF1), v(R, NC, VF2)
-    ==> NR is R + 1, NC is C + 1
-        | (var(HF1), HF1 = 1
-            ;
-           var(HF2), HF2 = 1
-            ;
-           var(VF1), VF1 = 1
-            ;
-           var(VF2), VF2 = 1).
